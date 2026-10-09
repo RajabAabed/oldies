@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>المقالات | البيت العتيق العقارية</title>
+    <meta
+      name="description"
+      content="مقالات البيت العتيق العقارية: تقارير السوق العقاري في الرياض، نصائح عقارية، ودليل المستثمر والمشتري لاتخاذ القرار الصحيح."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://oh.sa/articles.html" />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#242424" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_SA" />
+    <meta property="og:site_name" content="البيت العتيق العقارية" />
+    <meta property="og:title" content="المقالات | البيت العتيق العقارية" />
+    <meta property="og:description" content="تقارير السوق العقاري ونصائح عقارية ودليل المستثمر في الرياض." />
+    <meta property="og:url" content="https://oh.sa/articles.html" />
+    <meta property="og:image" content="https://oh.sa/og-image.jpg" />
+
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Header (light) -->
+    <header class="relative z-50 bg-white">
+      <div class="container-x flex h-20 items-center justify-between gap-6">
+        <a href="/" class="shrink-0" aria-label="البيت العتيق">
+          <img src="/src/assets/images/logo.svg" alt="البيت العتيق العقارية" class="logo-dark h-9 w-auto lg:h-10" />
+        </a>
+
+        <nav class="hidden items-center gap-7 lg:flex">
+          <a href="/" class="text-sm text-dark transition hover:text-gold">الرئيسية</a
+          ><a href="/riyadh.html" class="text-sm text-dark transition hover:text-gold">الرياض</a
+          ><a href="/#projects" class="text-sm text-dark transition hover:text-gold">للإيجار</a
+          ><a href="/#projects" class="text-sm text-dark transition hover:text-gold">للبيع</a
+          ><a href="/#projects" class="text-sm text-dark transition hover:text-gold">مشاريع</a
+          ><a href="/services.html" class="text-sm text-dark transition hover:text-gold">خدمات</a
+          ><a href="/articles.html" class="text-sm font-bold text-dark" aria-current="page">المقالات</a
+          ><a href="/contact.html" class="text-sm text-dark transition hover:text-gold">تواصل معنا</a>
+        </nav>
+
+        <div class="hidden items-center gap-3 lg:flex">
+          <a href="/#market" class="inline-flex h-10 items-center justify-center rounded-full bg-gold px-7 text-sm font-medium text-white transition hover:bg-gold-dark">سوّق مشروعك</a>
+          <button type="button" class="inline-flex h-10 cursor-pointer items-center gap-1.5 rounded-full border border-line px-4 text-xs font-medium text-dark transition hover:border-dark/40">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9S14.5 18.3 12 21c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" /></svg>
+            EN
+            <svg class="size-3.5 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+          </button>
+        </div>
+
+        <button id="menu-open" type="button" class="grid size-11 place-items-center rounded-full border border-line text-dark lg:hidden" aria-label="القائمة">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16" /><path d="M4 12h16" /><path d="M4 17h16" /></svg>
+        </button>
+      </div>
+    </header>
+
+    <div id="menu-overlay" class="pointer-events-none fixed inset-0 z-[60] bg-black/50 opacity-0 lg:hidden"></div>
+    <aside id="mobile-menu" class="fixed inset-y-0 right-0 z-[70] flex w-[82%] max-w-sm flex-col bg-dark p-6 text-white lg:hidden">
+      <div class="flex items-center justify-between">
+        <img src="/src/assets/images/logo.svg" alt="البيت العتيق" class="h-10 w-auto" />
+        <button id="menu-close" type="button" class="grid size-10 place-items-center rounded-full border border-white/20" aria-label="إغلاق">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+        </button>
+      </div>
+      <nav class="mt-10 flex flex-col">
+        <a href="/" data-menu-link class="border-b border-white/10 py-4 text-base">الرئيسية</a
+        ><a href="/riyadh.html" data-menu-link class="border-b border-white/10 py-4 text-base">الرياض</a
+        ><a href="/#projects" data-menu-link class="border-b border-white/10 py-4 text-base">للإيجار</a
+        ><a href="/#projects" data-menu-link class="border-b border-white/10 py-4 text-base">للبيع</a
+        ><a href="/#projects" data-menu-link class="border-b border-white/10 py-4 text-base">مشاريع</a
+        ><a href="/services.html" data-menu-link class="border-b border-white/10 py-4 text-base">خدمات</a
+        ><a href="/articles.html" data-menu-link class="border-b border-white/10 py-4 text-base font-bold text-gold">المقالات</a
+        ><a href="/contact.html" data-menu-link class="border-b border-white/10 py-4 text-base">تواصل معنا</a>
+      </nav>
+      <div class="mt-auto flex flex-col gap-3">
+        <a href="/#market" data-menu-link class="inline-flex h-12 items-center justify-center rounded-full bg-gold text-sm font-medium text-white">سوّق مشروعك</a>
+        <button type="button" class="inline-flex h-12 items-center justify-center rounded-full border border-white/70 text-sm font-medium text-white">EN</button>
+      </div>
+    </aside>
+
+    <main>
+      <section class="pb-16 pt-10 lg:pb-24 lg:pt-12">
+        <div class="mx-auto w-full max-w-[1096px] px-4 sm:px-6 lg:px-4">
+          <!-- Title + filters -->
+          <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between" data-reveal="up">
+            <h1 class="text-3xl font-bold text-dark sm:text-4xl lg:text-[44px]">المقالات</h1>
+            <div class="no-scrollbar -mx-4 flex items-center gap-2 overflow-x-auto px-4 sm:mx-0 sm:px-0" aria-label="تصنيف المقالات">
+              <a href="#" class="filter-tab is-active" aria-current="page">الكل</a>
+              <a href="#" class="filter-tab">تقارير السوق</a>
+              <a href="#" class="filter-tab">نصائح عقارية</a>
+              <a href="#" class="filter-tab">دليل المستثمر</a>
+            </div>
+          </div>
+
+          <!-- Featured -->
+          <article class="group mt-10 lg:mt-12" data-reveal="up" style="--d: 100ms">
+            <a href="/article.html" class="grid items-center gap-6 md:grid-cols-[1fr_1.15fr] md:gap-12">
+              <div>
+                <p class="text-xs text-muted">تقارير السوق • أكتوبر 27 2026</p>
+                <h2 class="mt-4 text-2xl font-bold leading-[1.45] text-dark transition group-hover:text-gold sm:text-3xl lg:text-[34px]">
+                  تقرير البيت العتيق نظرة شاملة على أداء السوق العقاري في الرياض لعام 2026
+                </h2>
+                <p class="mt-5 max-w-md text-sm leading-7 text-ink">
+                  رصد لأهم التحركات في أسعار العقارات السكنية والتجارية، وأبرز الفرص الاستثمارية المتاحة في الأحياء الواعدة لدعم قرارك الشرائي.
+                </p>
+              </div>
+              <div class="img-zoom order-first aspect-[16/9] rounded-3xl md:order-none">
+                <img src="/src/assets/images/meeting-wide.png" alt="أداء السوق العقاري في الرياض لعام 2026" class="size-full object-cover" />
+              </div>
+            </a>
+          </article>
+
+          <!-- Grid -->
+          <div class="mt-14 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
+            <article class="group" data-reveal="up" style="--d: 0ms">
+              <a href="/article.html" class="block">
+                <div class="img-zoom aspect-[338/176] rounded-2xl bg-cream">
+                  <img src="/src/assets/images/hero.png" alt="" class="size-full object-cover" loading="lazy" />
+                </div>
+                <p class="mt-5 text-xs text-muted">نصائح عقارية • أكتوبر 13 2025</p>
+                <h3 class="mt-3 text-lg font-bold leading-8 text-dark transition group-hover:text-gold lg:text-xl lg:leading-9">كيف تختار المطور العقاري المناسب عند شراء عقار "على الخارطة"؟</h3>
+              </a>
+            </article>
+            <article class="group" data-reveal="up" style="--d: 90ms">
+              <a href="/article.html" class="block">
+                <div class="img-zoom aspect-[338/176] rounded-2xl bg-cream">
+                  <img src="/src/assets/images/villa.png" alt="" class="size-full object-cover" loading="lazy" />
+                </div>
+                <p class="mt-5 text-xs text-muted">دليل المشتري • أكتوبر 13 2025</p>
+                <h3 class="mt-3 text-lg font-bold leading-8 text-dark transition group-hover:text-gold lg:text-xl lg:leading-9">5 أسئلة جوهرية يجب أن تطرحها على مستشارك العقاري قبل الشراء</h3>
+              </a>
+            </article>
+            <article class="group" data-reveal="up" style="--d: 180ms">
+              <a href="/article.html" class="block">
+                <div class="img-zoom aspect-[338/176] rounded-2xl bg-cream">
+                  <img src="/src/assets/images/building-lit.png" alt="" class="size-full object-cover" loading="lazy" />
+                </div>
+                <p class="mt-5 text-xs text-muted">حلول التمويل • أكتوبر 13 2025</p>
+                <h3 class="mt-3 text-lg font-bold leading-8 text-dark transition group-hover:text-gold lg:text-xl lg:leading-9">كيف نساعدك في اختصار الوقت والجهد لاختيار أفضل جهة تمويلية؟</h3>
+              </a>
+            </article>
+            <article class="group" data-reveal="up" style="--d: 0ms">
+              <a href="/article.html" class="block">
+                <div class="img-zoom aspect-[338/176] rounded-2xl bg-cream">
+                  <img src="/src/assets/images/tower-crop.png" alt="" class="size-full object-cover" loading="lazy" />
+                </div>
+                <p class="mt-5 text-xs text-muted">نصائح عقارية • أكتوبر 13 2025</p>
+                <h3 class="mt-3 text-lg font-bold leading-8 text-dark transition group-hover:text-gold lg:text-xl lg:leading-9">كيف تختار المطور العقاري المناسب عند شراء عقار "على الخارطة"؟</h3>
+              </a>
+            </article>
+            <article class="group" data-reveal="up" style="--d: 90ms">
+              <a href="/article.html" class="block">
+                <div class="img-zoom aspect-[338/176] rounded-2xl bg-cream">
+                  <img src="/src/assets/images/service-marketing.png" alt="" class="size-full object-cover" loading="lazy" />
+                </div>
+                <p class="mt-5 text-xs text-muted">دليل المشتري • أكتوبر 13 2025</p>
+                <h3 class="mt-3 text-lg font-bold leading-8 text-dark transition group-hover:text-gold lg:text-xl lg:leading-9">5 أسئلة جوهرية يجب أن تطرحها على مستشارك العقاري قبل الشراء</h3>
+              </a>
+            </article>
+            <article class="group" data-reveal="up" style="--d: 180ms">
+              <a href="/article.html" class="block">
+                <div class="img-zoom aspect-[338/176] rounded-2xl bg-cream">
+                  <img src="/src/assets/images/meeting-square.png" alt="" class="size-full object-cover" loading="lazy" />
+                </div>
+                <p class="mt-5 text-xs text-muted">حلول التمويل • أكتوبر 13 2025</p>
+                <h3 class="mt-3 text-lg font-bold leading-8 text-dark transition group-hover:text-gold lg:text-xl lg:leading-9">كيف نساعدك في اختصار الوقت والجهد لاختيار أفضل جهة تمويلية؟</h3>
+              </a>
+            </article>
+            <article class="group" data-reveal="up" style="--d: 0ms">
+              <a href="/article.html" class="block">
+                <div class="img-zoom aspect-[338/176] rounded-2xl bg-cream">
+                  <img src="/src/assets/images/tower.png" alt="" class="size-full object-cover" loading="lazy" />
+                </div>
+                <p class="mt-5 text-xs text-muted">نصائح عقارية • أكتوبر 13 2025</p>
+                <h3 class="mt-3 text-lg font-bold leading-8 text-dark transition group-hover:text-gold lg:text-xl lg:leading-9">كيف تختار المطور العقاري المناسب عند شراء عقار "على الخارطة"؟</h3>
+              </a>
+            </article>
+            <article class="group" data-reveal="up" style="--d: 90ms">
+              <a href="/article.html" class="block">
+                <div class="img-zoom aspect-[338/176] rounded-2xl bg-cream">
+                  <img src="/src/assets/images/cta-banner.png" alt="" class="size-full object-cover" loading="lazy" />
+                </div>
+                <p class="mt-5 text-xs text-muted">دليل المشتري • أكتوبر 13 2025</p>
+                <h3 class="mt-3 text-lg font-bold leading-8 text-dark transition group-hover:text-gold lg:text-xl lg:leading-9">5 أسئلة جوهرية يجب أن تطرحها على مستشارك العقاري قبل الشراء</h3>
+              </a>
+            </article>
+            <article class="group" data-reveal="up" style="--d: 180ms">
+              <a href="/article.html" class="block">
+                <div class="img-zoom aspect-[338/176] rounded-2xl bg-cream">
+                  <img src="/src/assets/images/service-brokerage.png" alt="" class="size-full object-cover" loading="lazy" />
+                </div>
+                <p class="mt-5 text-xs text-muted">حلول التمويل • أكتوبر 13 2025</p>
+                <h3 class="mt-3 text-lg font-bold leading-8 text-dark transition group-hover:text-gold lg:text-xl lg:leading-9">كيف نساعدك في اختصار الوقت والجهد لاختيار أفضل جهة تمويلية؟</h3>
+              </a>
+            </article>
+            <article class="group" data-reveal="up" style="--d: 0ms">
+              <a href="/article.html" class="block">
+                <div class="img-zoom aspect-[338/176] rounded-2xl bg-cream">
+                  <img src="/src/assets/images/villa-day.png" alt="" class="size-full object-cover" loading="lazy" />
+                </div>
+                <p class="mt-5 text-xs text-muted">نصائح عقارية • أكتوبر 13 2025</p>
+                <h3 class="mt-3 text-lg font-bold leading-8 text-dark transition group-hover:text-gold lg:text-xl lg:leading-9">كيف تختار المطور العقاري المناسب عند شراء عقار "على الخارطة"؟</h3>
+              </a>
+            </article>
+            <article class="group" data-reveal="up" style="--d: 90ms">
+              <a href="/article.html" class="block">
+                <div class="img-zoom aspect-[338/176] rounded-2xl bg-cream">
+                  <img src="/src/assets/images/building-night.png" alt="" class="size-full object-cover" loading="lazy" />
+                </div>
+                <p class="mt-5 text-xs text-muted">دليل المشتري • أكتوبر 13 2025</p>
+                <h3 class="mt-3 text-lg font-bold leading-8 text-dark transition group-hover:text-gold lg:text-xl lg:leading-9">5 أسئلة جوهرية يجب أن تطرحها على مستشارك العقاري قبل الشراء</h3>
+              </a>
+            </article>
+            <article class="group" data-reveal="up" style="--d: 180ms">
+              <a href="/article.html" class="block">
+                <div class="img-zoom aspect-[338/176] rounded-2xl bg-cream">
+                  <img src="/src/assets/images/service-management.png" alt="" class="size-full object-cover" loading="lazy" />
+                </div>
+                <p class="mt-5 text-xs text-muted">حلول التمويل • أكتوبر 13 2025</p>
+                <h3 class="mt-3 text-lg font-bold leading-8 text-dark transition group-hover:text-gold lg:text-xl lg:leading-9">كيف نساعدك في اختصار الوقت والجهد لاختيار أفضل جهة تمويلية؟</h3>
+              </a>
+            </article>
+          </div>
+
+          <!-- Pagination -->
+          <nav class="mt-14 flex items-center justify-center gap-2" aria-label="الصفحات">
+            <span class="page-btn is-disabled" aria-label="الصفحة السابقة"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6" /></svg></span>
+            <a href="#" class="page-btn is-active" aria-current="page">1</a>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn" aria-label="الصفحة التالية"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6" /></svg></a>
+          </nav>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="relative overflow-hidden">
+        <img src="/src/assets/images/hero.png" alt="" class="absolute inset-0 size-full object-cover" data-parallax loading="lazy" />
+        <div class="absolute inset-0 bg-black/45"></div>
+        <div class="container-x relative flex min-h-[460px] flex-col items-center justify-center py-20 text-center text-white lg:min-h-[550px]" data-reveal="zoom">
+          <h2 class="text-2xl font-bold sm:text-3xl lg:text-[34px]">مهتم بالسكن في حي النرجس؟</h2>
+          <p class="mx-auto mt-4 max-w-sm text-sm leading-7 text-white/85">
+            اترك رقمك ليتواصل معك فريقنا بالمعروض المناسب، أو راسلنا مباشرة عبر واتساب.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a href="#contact" class="inline-flex h-12 min-w-[132px] items-center justify-center rounded-full bg-gold px-7 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-gold-dark">سجل اهتمامك</a>
+            <a href="https://wa.me/966500740220" target="_blank" rel="noopener" class="inline-flex h-12 min-w-[132px] items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-medium text-dark transition hover:-translate-y-0.5">
+              <svg class="size-[18px] text-[#25D366]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.9 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.2.1 12 .1 5.5.1.1 5.5.1 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.5 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.1-3.5-8.3z" /></svg>
+              واتساب
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark pt-16 text-white">
+      <div class="container-x grid gap-10 pb-16 sm:grid-cols-2 lg:grid-cols-[1.1fr_1fr_1fr_1fr_1.2fr] lg:pb-24">
+        <div data-reveal="up">
+          <img src="/src/assets/images/logo.svg" alt="البيت العتيق العقارية" class="h-10 w-auto" />
+        </div>
+        <div data-reveal="up" style="--d: 80ms">
+          <h3 class="text-sm font-bold">روابط سريعة</h3>
+          <ul class="mt-5 flex flex-col gap-4 text-sm text-white/70">
+            <li><a href="/#about" class="transition hover:text-gold">من نحن</a></li>
+            <li><a href="/#services" class="transition hover:text-gold">خدماتنا</a></li>
+            <li><a href="/#projects" class="transition hover:text-gold">مشاريعنا</a></li>
+            <li><a href="#" class="transition hover:text-gold">المركز الإعلامي</a></li>
+            <li><a href="/articles.html" class="transition hover:text-gold">المدونة</a></li>
+          </ul>
+        </div>
+        <div data-reveal="up" style="--d: 160ms">
+          <h3 class="text-sm font-bold">خدماتنا</h3>
+          <ul class="mt-5 flex flex-col gap-4 text-sm text-white/70">
+            <li><a href="#" class="transition hover:text-gold">إدارة الأملاك</a></li>
+            <li><a href="#" class="transition hover:text-gold">التسويق العقاري</a></li>
+            <li><a href="#" class="transition hover:text-gold">الوساطة العقارية</a></li>
+            <li><a href="#" class="transition hover:text-gold">عقارات للبيع</a></li>
+            <li><a href="#" class="transition hover:text-gold">عقارات للإيجار</a></li>
+          </ul>
+        </div>
+        <div data-reveal="up" style="--d: 240ms">
+          <h3 class="text-sm font-bold">الدعم والسياسات</h3>
+          <ul class="mt-5 flex flex-col gap-4 text-sm text-white/70">
+            <li><a href="#" class="transition hover:text-gold">الأسئلة الشائعة</a></li>
+            <li><a href="#" class="transition hover:text-gold">الشروط والأحكام</a></li>
+            <li><a href="#" class="transition hover:text-gold">سياسة الخصوصية</a></li>
+          </ul>
+        </div>
+        <div data-reveal="up" style="--d: 320ms">
+          <h3 class="text-sm font-bold">اتصل بنا</h3>
+          <ul class="mt-5 flex flex-col gap-4 text-sm text-white/70">
+            <li><a href="tel:+966920024941" class="transition hover:text-gold">رقم التواصل: <span dir="ltr">+966920024941</span></a></li>
+            <li><a href="https://wa.me/966500740220" target="_blank" rel="noopener" class="transition hover:text-gold">واتساب: <span dir="ltr">+966500740220</span></a></li>
+            <li><a href="mailto:info@oh.sa" class="transition hover:text-gold">الإيميل: <span class="text-white">info@oh.sa</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-x flex flex-col-reverse items-center justify-between gap-5 pb-10 sm:flex-row">
+        <p class="text-center text-xs text-white/70">© جميع الحقوق محفوظة شركة البيت العتيق العقارية 2026</p>
+        <div class="flex items-center gap-5 text-white/90">
+          <a href="#" class="transition hover:text-gold" aria-label="YouTube"><svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8zM9.7 15V9l5.8 3-5.8 3z" /></svg></a>
+          <a href="#" class="transition hover:text-gold" aria-label="LinkedIn"><svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6zM8 19H5V9.5h3V19zM6.5 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19h-3V9.5h2.9v1.3c.4-.8 1.4-1.5 2.8-1.5 3 0 3.6 2 3.6 4.6V19z" /></svg></a>
+          <a href="#" class="transition hover:text-gold" aria-label="X"><svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 2.5h3.2l-7 8 8.2 11h-6.4l-5-6.6-5.8 6.6H1.8l7.5-8.6L1.4 2.5H8l4.5 6 5.3-6zm-1.1 17h1.8L7.3 4.3H5.4l11.3 15.2z" /></svg></a>
+          <a href="#" class="transition hover:text-gold" aria-label="Facebook"><svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z" /></svg></a>
+          <a href="#" class="transition hover:text-gold" aria-label="Instagram"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r=".6" fill="currentColor" /></svg></a>
+        </div>
+      </div>
+    </footer>
+
+    <button id="to-top" type="button" class="fixed bottom-5 left-5 z-40 grid size-11 translate-y-20 place-items-center rounded-full bg-dark text-white opacity-0 shadow-xl transition duration-500 hover:bg-gold hover:text-dark" aria-label="للأعلى">
+      <svg class="size-5 rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+    </button>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

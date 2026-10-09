@@ -188,127 +188,132 @@ document.querySelectorAll('[data-quick]').forEach((chip) => {
     input.focus()
   })
 })
-document.querySelector('#search-form').addEventListener('submit', (e) => {
+document.querySelector('#search-form')?.addEventListener('submit', (e) => {
   e.preventDefault()
   document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' })
 })
 
 /* ---------- Saudi regions map ---------- */
-const VIEW_W = 1000
-const VIEW_H = 825
-const mapSvg = document.querySelector('#sa-map')
-const mapOverlay = document.querySelector('#map-overlay')
-const regionSelect = document.querySelector('#map-region')
-const districtsEl = document.querySelector('#map-districts')
-const riyal = '<svg class="h-[0.85em] w-auto" viewBox="0 0 20 22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 2v14.5l-4 1" /><path d="M12.5 4v15" /><path d="M2 10.5l16-3.5" /><path d="M2 14.5l16-3.5" /><path d="M14 20l4-1" /></svg>'
-const priceFormat = new Intl.NumberFormat('en-US')
-const pct = (x, y) => `left:${(x / VIEW_W) * 100}%;top:${(y / VIEW_H) * 100}%`
+// Home page only
+if (document.querySelector('#sa-map')) {
+  const VIEW_W = 1000
+  const VIEW_H = 825
+  const mapSvg = document.querySelector('#sa-map')
+  const mapOverlay = document.querySelector('#map-overlay')
+  const regionSelect = document.querySelector('#map-region')
+  const districtsEl = document.querySelector('#map-districts')
+  const riyal = '<svg class="h-[0.85em] w-auto" viewBox="0 0 20 22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 2v14.5l-4 1" /><path d="M12.5 4v15" /><path d="M2 10.5l16-3.5" /><path d="M2 14.5l16-3.5" /><path d="M14 20l4-1" /></svg>'
+  const priceFormat = new Intl.NumberFormat('en-US')
+  const pct = (x, y) => `left:${(x / VIEW_W) * 100}%;top:${(y / VIEW_H) * 100}%`
 
-// Fallback badge positions (fractions of the region bounding box, from its centre)
-const autoSpots = [
-  [-0.32, -0.22],
-  [0.06, -0.06],
-  [-0.3, 0.18],
-  [0.08, 0.3],
-]
+  // Fallback badge positions (fractions of the region bounding box, from its centre)
+  const autoSpots = [
+    [-0.32, -0.22],
+    [0.06, -0.06],
+    [-0.3, 0.18],
+    [0.08, 0.3],
+  ]
 
-regionSelect.innerHTML = Object.entries(mapData)
-  .map(([id, r]) => `<option value="${id}">${r.short}</option>`)
-  .join('')
-
-const renderDistricts = (r) => {
-  const chip = (text) =>
-    `<button type="button" data-chip class="h-9 shrink-0 cursor-pointer whitespace-nowrap rounded-full border border-line bg-white px-4 text-xs text-dark transition hover:border-gold sm:text-[13px]">${text}</button>`
-  districtsEl.innerHTML = [...r.districts, `كل أحياء ${r.short}`].map(chip).join('')
-}
-districtsEl.addEventListener('click', (e) => {
-  const chip = e.target.closest('[data-chip]')
-  if (!chip) return
-  const on = !chip.classList.contains('is-on')
-  districtsEl.querySelectorAll('[data-chip]').forEach((c) => {
-    c.classList.remove('is-on', 'border-gold', 'bg-gold', 'text-white')
-    c.classList.add('bg-white', 'text-dark')
-  })
-  if (on) {
-    chip.classList.add('is-on', 'border-gold', 'bg-gold', 'text-white')
-    chip.classList.remove('bg-white', 'text-dark')
-  }
-})
-
-const renderOverlay = (id) => {
-  const r = mapData[id]
-  const box = document.getElementById(id).getBBox()
-  const cx = box.x + box.width / 2
-  const cy = box.y + box.height / 2
-  const label = r.label ?? { x: cx, y: cy }
-
-  const badges = (r.prices ?? [])
-    .map((p, i) => {
-      const [fx, fy] = autoSpots[i % autoSpots.length]
-      const x = p.x ?? cx + fx * box.width
-      const y = p.y ?? cy + fy * box.height
-      return `<span class="map-pop absolute inline-flex -translate-y-full items-center gap-1 whitespace-nowrap rounded-full rounded-bl-none bg-gold px-2 py-1 text-[10px] font-medium text-white shadow-sm sm:px-3.5 sm:py-1.5 sm:text-[15px]" dir="ltr" style="${pct(x, y)};animation-delay:${150 + i * 90}ms">${riyal}${priceFormat.format(p.value)}</span>`
-    })
+  regionSelect.innerHTML = Object.entries(mapData)
+    .map(([id, r]) => `<option value="${id}">${r.short}</option>`)
     .join('')
 
-  mapOverlay.innerHTML = `${badges}
-    <span class="map-pop absolute -translate-x-1/2 -translate-y-full" style="${pct(label.x, label.y)}">
-      <span class="relative mb-2 block whitespace-nowrap rounded-full bg-white px-3 py-1.5 text-[11px] font-medium text-dark shadow-[0_4px_16px_rgba(0,0,0,0.1)] sm:px-5 sm:py-2.5 sm:text-[15px]">${r.name}
-        <span class="absolute -bottom-1 left-1/2 size-2.5 -translate-x-1/2 rotate-45 bg-white"></span>
-      </span>
-    </span>`
-}
+  const renderDistricts = (r) => {
+    const chip = (text) =>
+      `<button type="button" data-chip class="h-9 shrink-0 cursor-pointer whitespace-nowrap rounded-full border border-line bg-white px-4 text-xs text-dark transition hover:border-gold sm:text-[13px]">${text}</button>`
+    districtsEl.innerHTML = [...r.districts, `كل أحياء ${r.short}`].map(chip).join('')
+  }
+  districtsEl.addEventListener('click', (e) => {
+    const chip = e.target.closest('[data-chip]')
+    if (!chip) return
+    const on = !chip.classList.contains('is-on')
+    districtsEl.querySelectorAll('[data-chip]').forEach((c) => {
+      c.classList.remove('is-on', 'border-gold', 'bg-gold', 'text-white')
+      c.classList.add('bg-white', 'text-dark')
+    })
+    if (on) {
+      chip.classList.add('is-on', 'border-gold', 'bg-gold', 'text-white')
+      chip.classList.remove('bg-white', 'text-dark')
+    }
+  })
 
-const selectRegion = (id) => {
-  if (!mapData[id]) return
-  mapSvg.querySelectorAll('.region').forEach((p) => p.classList.toggle('is-active', p.id === id))
-  // Bring the active region to the front so its thick border is not covered by neighbours
-  mapSvg.appendChild(document.getElementById(id))
-  regionSelect.value = id
-  renderDistricts(mapData[id])
-  renderOverlay(id)
-}
+  const renderOverlay = (id) => {
+    const r = mapData[id]
+    const box = document.getElementById(id).getBBox()
+    const cx = box.x + box.width / 2
+    const cy = box.y + box.height / 2
+    const label = r.label ?? { x: cx, y: cy }
 
-mapSvg.addEventListener('click', (e) => {
-  const path = e.target.closest('.region')
-  if (path) selectRegion(path.id)
-})
-regionSelect.addEventListener('change', () => selectRegion(regionSelect.value))
-selectRegion(defaultRegion)
+    const badges = (r.prices ?? [])
+      .map((p, i) => {
+        const [fx, fy] = autoSpots[i % autoSpots.length]
+        const x = p.x ?? cx + fx * box.width
+        const y = p.y ?? cy + fy * box.height
+        return `<span class="map-pop absolute inline-flex -translate-y-full items-center gap-1 whitespace-nowrap rounded-full rounded-bl-none bg-gold px-2 py-1 text-[10px] font-medium text-white shadow-sm sm:px-3.5 sm:py-1.5 sm:text-[15px]" dir="ltr" style="${pct(x, y)};animation-delay:${150 + i * 90}ms">${riyal}${priceFormat.format(p.value)}</span>`
+      })
+      .join('')
+
+    mapOverlay.innerHTML = `${badges}
+      <span class="map-pop absolute -translate-x-1/2 -translate-y-full" style="${pct(label.x, label.y)}">
+        <span class="relative mb-2 block whitespace-nowrap rounded-full bg-white px-3 py-1.5 text-[11px] font-medium text-dark shadow-[0_4px_16px_rgba(0,0,0,0.1)] sm:px-5 sm:py-2.5 sm:text-[15px]">${r.name}
+          <span class="absolute -bottom-1 left-1/2 size-2.5 -translate-x-1/2 rotate-45 bg-white"></span>
+        </span>
+      </span>`
+  }
+
+  const selectRegion = (id) => {
+    if (!mapData[id]) return
+    mapSvg.querySelectorAll('.region').forEach((p) => p.classList.toggle('is-active', p.id === id))
+    // Bring the active region to the front so its thick border is not covered by neighbours
+    mapSvg.appendChild(document.getElementById(id))
+    regionSelect.value = id
+    renderDistricts(mapData[id])
+    renderOverlay(id)
+  }
+
+  mapSvg.addEventListener('click', (e) => {
+    const path = e.target.closest('.region')
+    if (path) selectRegion(path.id)
+  })
+  regionSelect.addEventListener('change', () => selectRegion(regionSelect.value))
+  selectRegion(defaultRegion)
+}
 
 /* ---------- AI assistant chat (UI only) ---------- */
-const chatPanel = document.querySelector("#chat-panel")
-const chatToggle = document.querySelector("#chat-toggle")
-const chatLog = document.querySelector("#chat-log")
-const chatInput = document.querySelector("#chat-form input")
-const sparkle = chatToggle.innerHTML.replace("size-7", "size-3.5")
+if (document.querySelector("#chat")) {
+  const chatPanel = document.querySelector("#chat-panel")
+  const chatToggle = document.querySelector("#chat-toggle")
+  const chatLog = document.querySelector("#chat-log")
+  const chatInput = document.querySelector("#chat-form input")
+  const sparkle = chatToggle.innerHTML.replace("size-7", "size-3.5")
 
-const setChat = (open) => {
-  chatPanel.classList.toggle("opacity-0", !open)
-  chatPanel.classList.toggle("scale-95", !open)
-  chatPanel.classList.toggle("translate-y-4", !open)
-  chatPanel.classList.toggle("pointer-events-none", !open)
-  chatPanel.setAttribute("aria-hidden", String(!open))
-  chatToggle.setAttribute("aria-expanded", String(open))
-  if (open) setTimeout(() => chatInput.focus(), 300)
-}
-chatToggle.addEventListener("click", () => setChat(chatPanel.classList.contains("opacity-0")))
-document.querySelector("#chat-close").addEventListener("click", () => setChat(false))
-document.addEventListener("keydown", (e) => e.key === "Escape" && setChat(false))
+  const setChat = (open) => {
+    chatPanel.classList.toggle("opacity-0", !open)
+    chatPanel.classList.toggle("scale-95", !open)
+    chatPanel.classList.toggle("translate-y-4", !open)
+    chatPanel.classList.toggle("pointer-events-none", !open)
+    chatPanel.setAttribute("aria-hidden", String(!open))
+    chatToggle.setAttribute("aria-expanded", String(open))
+    if (open) setTimeout(() => chatInput.focus(), 300)
+  }
+  chatToggle.addEventListener("click", () => setChat(chatPanel.classList.contains("opacity-0")))
+  document.querySelector("#chat-close").addEventListener("click", () => setChat(false))
+  document.addEventListener("keydown", (e) => e.key === "Escape" && setChat(false))
 
-const escapeHtml = (t) => t.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;" })[c])
-const botMessage = (text) =>
-  `<div class="flex items-start gap-2"><span class="grid size-6 shrink-0 place-items-center rounded-full bg-gold text-white">${sparkle}</span><p class="text-justify text-[13px] leading-6 text-dark">${text}</p></div>`
+  const escapeHtml = (t) => t.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;" })[c])
+  const botMessage = (text) =>
+    `<div class="flex items-start gap-2"><span class="grid size-6 shrink-0 place-items-center rounded-full bg-gold text-white">${sparkle}</span><p class="text-justify text-[13px] leading-6 text-dark">${text}</p></div>`
 
-document.querySelector("#chat-form").addEventListener("submit", (e) => {
-  e.preventDefault()
-  const text = chatInput.value.trim()
-  if (!text) return
-  chatLog.insertAdjacentHTML("beforeend", `<p class="max-w-[85%] self-end rounded-2xl rounded-bl-sm bg-[#f4f4f4] px-3 py-2 text-[13px] leading-6 text-dark">${escapeHtml(text)}</p>`)
-  chatInput.value = ""
-  chatLog.scrollTop = chatLog.scrollHeight
-  setTimeout(() => {
-    chatLog.insertAdjacentHTML("beforeend", botMessage("شكراً لتواصلك! سيتواصل معك أحد مستشارينا قريباً لمساعدتك في طلبك."))
+  document.querySelector("#chat-form").addEventListener("submit", (e) => {
+    e.preventDefault()
+    const text = chatInput.value.trim()
+    if (!text) return
+    chatLog.insertAdjacentHTML("beforeend", `<p class="max-w-[85%] self-end rounded-2xl rounded-bl-sm bg-[#f4f4f4] px-3 py-2 text-[13px] leading-6 text-dark">${escapeHtml(text)}</p>`)
+    chatInput.value = ""
     chatLog.scrollTop = chatLog.scrollHeight
-  }, 700)
-})
+    setTimeout(() => {
+      chatLog.insertAdjacentHTML("beforeend", botMessage("شكراً لتواصلك! سيتواصل معك أحد مستشارينا قريباً لمساعدتك في طلبك."))
+      chatLog.scrollTop = chatLog.scrollHeight
+    }, 700)
+  })
+}

@@ -130,6 +130,25 @@
     @apply text-sm text-white;
   }
 
+  /* White logo turned dark for light headers */
+  .logo-dark {
+    filter: brightness(0) opacity(0.88);
+  }
+
+  /* Articles page */
+  .filter-tab {
+    @apply inline-flex h-10 shrink-0 cursor-pointer items-center justify-center whitespace-nowrap rounded-full px-4 text-sm text-dark transition hover:bg-[#f5f5f5];
+  }
+  .filter-tab.is-active {
+    @apply bg-[#f2f2f2] font-bold;
+  }
+  .page-btn {
+    @apply grid size-8 cursor-pointer place-items-center rounded-full text-xs text-ink transition hover:bg-[#f2f2f2] [&.is-disabled]:pointer-events-none [&.is-disabled]:opacity-40;
+  }
+  .page-btn.is-active {
+    @apply bg-[#f2f2f2] font-medium text-dark;
+  }
+
   .img-zoom {
     @apply overflow-hidden;
   }
@@ -146,6 +165,16 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* District price chart: gold that fades out at the top and softens at the bottom */
+.chart-bar {
+  background: linear-gradient(
+    to bottom,
+    rgba(205, 171, 35, 0) 0%,
+    rgba(205, 171, 35, 0.8) 62%,
+    rgba(205, 171, 35, 0.3) 100%
+  );
 }
 
 /* ---------- Scroll reveal ---------- */
@@ -227,6 +256,12 @@
 }
 .faq-item.is-open .faq-icon {
   transform: rotate(45deg);
+}
+.faq-item .faq-chevron {
+  transition: transform 0.35s ease;
+}
+.faq-item.is-open .faq-chevron {
+  transform: rotate(180deg);
 }
 
 /* Mobile menu */
