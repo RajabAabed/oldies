@@ -33,13 +33,14 @@
     <header class="absolute inset-x-0 top-0 z-50 pt-5 lg:pt-6">
       <div class="container-x">
         <div class="flex h-16 items-center justify-between gap-6 rounded-full bg-white/15 pl-3 pr-4 ring-1 ring-white/15 backdrop-blur-md lg:h-[72px] lg:pl-4 lg:pr-6">
-        <div class="flex items-center gap-10">
+        <div class="flex items-center gap-6 xl:gap-10">
           <a href="/" class="shrink-0" aria-label="البيت العتيق">
             <img src="/src/assets/images/logo.svg" alt="البيت العتيق العقارية" class="h-9 w-auto lg:h-10" />
           </a>
-          <nav class="hidden items-center gap-6 lg:flex">
+          <nav class="hidden items-center gap-4 lg:flex xl:gap-6">
             <a href="/" class="text-[13px] text-white/75 transition hover:text-white">الرئيسية</a
           ><a href="/riyadh.html" class="text-[13px] text-white/75 transition hover:text-white">الرياض</a
+          ><a href="/jeddah.html" class="text-[13px] text-white/75 transition hover:text-white">جدة</a
           ><a href="/#projects" class="text-[13px] text-white/75 transition hover:text-white">للإيجار</a
           ><a href="/#projects" class="text-[13px] text-white/75 transition hover:text-white">للبيع</a
           ><a href="/#projects" class="text-[13px] text-white/75 transition hover:text-white">المشاريع</a
@@ -76,6 +77,7 @@
       <nav class="mt-10 flex flex-col">
         <a href="/" data-menu-link class="border-b border-white/10 py-4 text-base">الرئيسية</a
         ><a href="/riyadh.html" data-menu-link class="border-b border-white/10 py-4 text-base">الرياض</a
+        ><a href="/jeddah.html" data-menu-link class="border-b border-white/10 py-4 text-base">جدة</a
         ><a href="/#projects" data-menu-link class="border-b border-white/10 py-4 text-base">للإيجار</a
         ><a href="/#projects" data-menu-link class="border-b border-white/10 py-4 text-base">للبيع</a
         ><a href="/#projects" data-menu-link class="border-b border-white/10 py-4 text-base">المشاريع</a
@@ -140,7 +142,7 @@
         </div>
       </section>
 
-      <section class="bg-white py-14 lg:py-20">
+      <section id="management" class="scroll-mt-6 bg-white py-14 lg:py-20">
         <div class="mx-auto grid w-full max-w-[1096px] items-center gap-8 px-4 sm:px-6 md:grid-cols-2 md:gap-16 lg:px-4">
           <div class="img-zoom aspect-square overflow-hidden rounded-3xl bg-cream" data-reveal="right">
             <img src="/src/assets/images/meeting-square.png" alt="طلب إدارة عقار" class="size-full object-cover" loading="lazy" />
@@ -153,7 +155,7 @@
         </div>
       </section>
 
-      <section class="bg-cream py-14 lg:py-20">
+      <section id="marketing" class="scroll-mt-6 bg-cream py-14 lg:py-20">
         <div class="mx-auto grid w-full max-w-[1096px] items-center gap-8 px-4 sm:px-6 md:grid-cols-2 md:gap-16 lg:px-4">
           <div class="img-zoom aspect-square overflow-hidden rounded-3xl bg-cream md:order-last" data-reveal="left">
             <img src="/src/assets/images/service-marketing.png" alt="طلب تسويق وحدة شاغرة" class="size-full object-cover" loading="lazy" />
@@ -166,7 +168,7 @@
         </div>
       </section>
 
-      <section class="bg-white py-14 lg:py-20">
+      <section id="brokerage" class="scroll-mt-6 bg-white py-14 lg:py-20">
         <div class="mx-auto grid w-full max-w-[1096px] items-center gap-8 px-4 sm:px-6 md:grid-cols-2 md:gap-16 lg:px-4">
           <div class="img-zoom aspect-square overflow-hidden rounded-3xl bg-cream" data-reveal="right">
             <img src="/src/assets/images/service-brokerage.png" alt="طلب شراء وحدة" class="size-full object-cover" loading="lazy" />
@@ -179,7 +181,7 @@
         </div>
       </section>
 
-      <section class="bg-cream py-14 lg:py-20">
+      <section id="reports" class="scroll-mt-6 bg-cream py-14 lg:py-20">
         <div class="mx-auto grid w-full max-w-[1096px] items-center gap-8 px-4 sm:px-6 md:grid-cols-2 md:gap-16 lg:px-4">
           <div class="img-zoom aspect-square overflow-hidden rounded-3xl bg-cream md:order-last" data-reveal="left">
             <img src="/src/assets/images/service-management.png" alt="طلب تقرير موقع وأسعار" class="size-full object-cover" loading="lazy" />
@@ -192,7 +194,7 @@
         </div>
       </section>
 
-      <section class="bg-white py-14 lg:py-20">
+      <section id="valuation" class="scroll-mt-6 bg-white py-14 lg:py-20">
         <div class="mx-auto grid w-full max-w-[1096px] items-center gap-8 px-4 sm:px-6 md:grid-cols-2 md:gap-16 lg:px-4">
           <div class="img-zoom aspect-square overflow-hidden rounded-3xl bg-cream" data-reveal="right">
             <img src="/src/assets/images/meeting-wide.png" alt="طلب تقييم عقاري" class="size-full object-cover" loading="lazy" />
@@ -200,12 +202,12 @@
           <div data-reveal="up" style="--d: 120ms">
             <h3 class="text-2xl font-bold text-dark lg:text-[28px]">طلب تقييم عقاري</h3>
             <p class="mt-4 max-w-sm text-sm leading-7 text-ink">تشغيل وتحصيل وصيانة ومتابعة العقود نيابة عن المالك.</p>
-            <a href="/contact.html" class="mt-7 inline-flex h-10 items-center gap-2 rounded-full border border-dark/80 px-5 text-xs font-medium text-dark transition hover:bg-dark hover:text-white">التفاصيل <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5" /><path d="m12 19-7-7 7-7" /></svg></a>
+            <a href="/valuation.html" class="mt-7 inline-flex h-10 items-center gap-2 rounded-full border border-dark/80 px-5 text-xs font-medium text-dark transition hover:bg-dark hover:text-white">التفاصيل <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5" /><path d="m12 19-7-7 7-7" /></svg></a>
           </div>
         </div>
       </section>
 
-      <section class="bg-cream py-14 lg:py-20">
+      <section id="maintenance" class="scroll-mt-6 bg-cream py-14 lg:py-20">
         <div class="mx-auto grid w-full max-w-[1096px] items-center gap-8 px-4 sm:px-6 md:grid-cols-2 md:gap-16 lg:px-4">
           <div class="img-zoom aspect-square overflow-hidden rounded-3xl bg-cream md:order-last" data-reveal="left">
             <img src="/src/assets/images/service-marketing.png" alt="طلب صيانة عقار" class="size-full object-cover" loading="lazy" />
@@ -262,7 +264,7 @@
         </div>
         <div data-slider="sold" class="no-scrollbar mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pl-4 pr-[max(16px,calc((100vw_-_1064px)/2))] scroll-pr-[max(16px,calc((100vw_-_1064px)/2))]">
           <article class="group w-[270px] shrink-0 snap-start sm:w-[320px]" data-reveal="up" style="--d: 0ms">
-            <a href="#" class="block">
+            <a href="/property.html" class="block">
               <div class="img-zoom aspect-[6/5] rounded-[20px]">
                 <img src="/src/assets/images/building-lit.png" alt="شقة للإيجار في حي النرجس" class="size-full object-cover" loading="lazy" />
               </div>
@@ -272,7 +274,7 @@
             </a>
           </article>
           <article class="group w-[270px] shrink-0 snap-start sm:w-[320px]" data-reveal="up" style="--d: 120ms">
-            <a href="#" class="block">
+            <a href="/property.html" class="block">
               <div class="img-zoom aspect-[6/5] rounded-[20px]">
                 <img src="/src/assets/images/tower.png" alt="شقة للإيجار في حي النرجس" class="size-full object-cover" loading="lazy" />
               </div>
@@ -282,7 +284,7 @@
             </a>
           </article>
           <article class="group w-[270px] shrink-0 snap-start sm:w-[320px]" data-reveal="up" style="--d: 240ms">
-            <a href="#" class="block">
+            <a href="/property.html" class="block">
               <div class="img-zoom aspect-[6/5] rounded-[20px]">
                 <img src="/src/assets/images/villa-day.png" alt="منزل للإيجار في حي حطين" class="size-full object-cover" loading="lazy" />
               </div>
@@ -292,7 +294,7 @@
             </a>
           </article>
           <article class="group w-[270px] shrink-0 snap-start sm:w-[320px]" data-reveal="up" style="--d: 360ms">
-            <a href="#" class="block">
+            <a href="/property.html" class="block">
               <div class="img-zoom aspect-[6/5] rounded-[20px]">
                 <img src="/src/assets/images/villa.png" alt="فيلا للبيع في حي القيروان" class="size-full object-cover" loading="lazy" />
               </div>
@@ -302,7 +304,7 @@
             </a>
           </article>
           <article class="group w-[270px] shrink-0 snap-start sm:w-[320px]" data-reveal="up" style="--d: 360ms">
-            <a href="#" class="block">
+            <a href="/property.html" class="block">
               <div class="img-zoom aspect-[6/5] rounded-[20px]">
                 <img src="/src/assets/images/building-night.png" alt="شقة للبيع في حي الملقا" class="size-full object-cover" loading="lazy" />
               </div>
@@ -410,26 +412,26 @@
             <li><a href="/#about" class="transition hover:text-gold">من نحن</a></li>
             <li><a href="/#services" class="transition hover:text-gold">خدماتنا</a></li>
             <li><a href="/#projects" class="transition hover:text-gold">مشاريعنا</a></li>
-            <li><a href="#" class="transition hover:text-gold">المركز الإعلامي</a></li>
+            <li><a href="/articles.html" class="transition hover:text-gold">المركز الإعلامي</a></li>
             <li><a href="/articles.html" class="transition hover:text-gold">المدونة</a></li>
           </ul>
         </div>
         <div data-reveal="up" style="--d: 160ms">
           <h3 class="text-sm font-bold">خدماتنا</h3>
           <ul class="mt-5 flex flex-col gap-4 text-sm text-white/70">
-            <li><a href="#" class="transition hover:text-gold">إدارة الأملاك</a></li>
-            <li><a href="#" class="transition hover:text-gold">التسويق العقاري</a></li>
-            <li><a href="#" class="transition hover:text-gold">الوساطة العقارية</a></li>
-            <li><a href="#" class="transition hover:text-gold">عقارات للبيع</a></li>
-            <li><a href="#" class="transition hover:text-gold">عقارات للإيجار</a></li>
+            <li><a href="/services.html#management" class="transition hover:text-gold">إدارة الأملاك</a></li>
+            <li><a href="/services.html#marketing" class="transition hover:text-gold">التسويق العقاري</a></li>
+            <li><a href="/services.html#brokerage" class="transition hover:text-gold">الوساطة العقارية</a></li>
+            <li><a href="/#projects" class="transition hover:text-gold">عقارات للبيع</a></li>
+            <li><a href="/#projects" class="transition hover:text-gold">عقارات للإيجار</a></li>
           </ul>
         </div>
         <div data-reveal="up" style="--d: 240ms">
           <h3 class="text-sm font-bold">الدعم والسياسات</h3>
           <ul class="mt-5 flex flex-col gap-4 text-sm text-white/70">
-            <li><a href="#" class="transition hover:text-gold">الأسئلة الشائعة</a></li>
-            <li><a href="#" class="transition hover:text-gold">الشروط والأحكام</a></li>
-            <li><a href="#" class="transition hover:text-gold">سياسة الخصوصية</a></li>
+            <li><a href="/faq.html" class="transition hover:text-gold">الأسئلة الشائعة</a></li>
+            <li><a href="/terms.html" class="transition hover:text-gold">الشروط والأحكام</a></li>
+            <li><a href="/privacy.html" class="transition hover:text-gold">سياسة الخصوصية</a></li>
           </ul>
         </div>
         <div data-reveal="up" style="--d: 320ms">

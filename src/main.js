@@ -279,6 +279,98 @@ if (document.querySelector('#sa-map')) {
   selectRegion(defaultRegion)
 }
 
+/* ---------- City Google map ---------- */
+// City pages (riyadh, jeddah): district chips move the embedded Google map.
+// The city and its districts come from data-city / data-districts on the iframe.
+if (document.querySelector('#city-map')) {
+  const cityMap = document.querySelector('#city-map')
+  const regionSelect = document.querySelector('#map-region')
+  const districtsEl = document.querySelector('#map-districts')
+  const city = cityMap.dataset.city
+  const districts = cityMap.dataset.districts.split('،')
+  const mapSrc = (q, zoom) =>
+    `https://www.google.com/maps?q=${encodeURIComponent(q)}&z=${zoom}&hl=ar&output=embed`
+
+  regionSelect.innerHTML = `<option>${city}</option>`
+
+  const chip = (text, district = '') =>
+    `<button type="button" data-chip data-district="${district}" class="h-9 shrink-0 cursor-pointer whitespace-nowrap rounded-full border border-line bg-white px-4 text-xs text-dark transition hover:border-gold sm:text-[13px]">${text}</button>`
+  districtsEl.innerHTML = [...districts.map((d) => chip(d, d)), chip(`كل أحياء ${city}`)].join('')
+
+  districtsEl.addEventListener('click', (e) => {
+    const target = e.target.closest('[data-chip]')
+    if (!target) return
+    districtsEl.querySelectorAll('[data-chip]').forEach((c) => {
+      const on = c === target
+      c.classList.toggle('is-on', on)
+      c.classList.toggle('border-gold', on)
+      c.classList.toggle('bg-gold', on)
+      c.classList.toggle('text-white', on)
+      c.classList.toggle('bg-white', !on)
+      c.classList.toggle('text-dark', !on)
+    })
+    const district = target.dataset.district
+    cityMap.src = district
+      ? mapSrc(`حي ${district}، ${city}، السعودية`, 14)
+      : mapSrc(`${city}، السعودية`, 11)
+  })
+}
+
+/* ---------- Image lightbox (property gallery) ---------- */
+const galleryLinks = [...document.querySelectorAll('[data-lightbox]')]
+if (galleryLinks.length) {
+  const box = document.createElement('div')
+  box.className = 'lightbox'
+  box.setAttribute('role', 'dialog')
+  box.setAttribute('aria-modal', 'true')
+  box.innerHTML = `
+    <img alt="" />
+    <button type="button" data-lb="close" class="lightbox-btn top-5 right-5" aria-label="إغلاق"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg></button>
+    <button type="button" data-lb="prev" class="lightbox-btn right-5 top-1/2 -translate-y-1/2" aria-label="السابق"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6" /></svg></button>
+    <button type="button" data-lb="next" class="lightbox-btn left-5 top-1/2 -translate-y-1/2" aria-label="التالي"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6" /></svg></button>`
+  document.body.appendChild(box)
+  const boxImg = box.querySelector('img')
+  let current = 0
+
+  const show = (i) => {
+    current = (i + galleryLinks.length) % galleryLinks.length
+    const img = galleryLinks[current].querySelector('img')
+    boxImg.src = img.currentSrc || img.src
+    boxImg.alt = img.alt
+  }
+  const setOpen = (open) => {
+    box.classList.toggle('is-open', open)
+    document.body.classList.toggle('overflow-hidden', open)
+  }
+  galleryLinks.forEach((link, i) =>
+    link.addEventListener('click', (e) => {
+      e.preventDefault()
+      show(i)
+      setOpen(true)
+    }),
+  )
+  box.addEventListener('click', (e) => {
+    const action = e.target.closest('[data-lb]')?.dataset.lb
+    if (action === 'prev') show(current - 1)
+    else if (action === 'next') show(current + 1)
+    else if (action === 'close' || e.target === box) setOpen(false)
+  })
+  document.addEventListener('keydown', (e) => {
+    if (!box.classList.contains('is-open')) return
+    if (e.key === 'Escape') setOpen(false)
+    // RTL: the right arrow goes back, the left arrow goes forward
+    if (e.key === 'ArrowRight') show(current - 1)
+    if (e.key === 'ArrowLeft') show(current + 1)
+  })
+}
+
+/* ---------- Service request form (UI only) ---------- */
+document.querySelector('#request-form')?.addEventListener('submit', (e) => {
+  e.preventDefault()
+  e.target.reset()
+  e.target.querySelector('[data-form-success]').classList.remove('hidden')
+})
+
 /* ---------- AI assistant chat (UI only) ---------- */
 if (document.querySelector("#chat")) {
   const chatPanel = document.querySelector("#chat-panel")

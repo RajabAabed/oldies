@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عقارات جدة إيجار وتمليك | البيت العتيق العقارية</title>
+    <meta name="description" content="عقارات جدة للإيجار والتمليك: تصفّح أحياء شمال وشرق وغرب وجنوب جدة، والوحدات المتاحة والمشاريع مع البيت العتيق." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://oh.sa/jeddah.html" />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#242424" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_SA" />
+    <meta property="og:site_name" content="البيت العتيق العقارية" />
+    <meta property="og:title" content="عقارات جدة إيجار وتمليك" />
+    <meta property="og:description" content="عقارات جدة للإيجار والتمليك: تصفّح أحياء شمال وشرق وغرب وجنوب جدة، والوحدات المتاحة والمشاريع مع البيت العتيق." />
+    <meta property="og:url" content="https://oh.sa/jeddah.html" />
+    <meta property="og:image" content="https://oh.sa/og-image.jpg" />
+
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Header (floating glass bar over the hero) -->
+    <header class="absolute inset-x-0 top-0 z-50 pt-5 lg:pt-6">
+      <div class="container-x">
+        <div class="flex h-16 items-center justify-between gap-6 rounded-full bg-white/15 pl-3 pr-4 ring-1 ring-white/15 backdrop-blur-md lg:h-[72px] lg:pl-4 lg:pr-6">
+        <div class="flex items-center gap-6 xl:gap-10">
+          <a href="/" class="shrink-0" aria-label="البيت العتيق">
+            <img src="/src/assets/images/logo.svg" alt="البيت العتيق العقارية" class="h-9 w-auto lg:h-10" />
+          </a>
+          <nav class="hidden items-center gap-4 lg:flex xl:gap-6">
+            <a href="/" class="text-[13px] text-white/75 transition hover:text-white">الرئيسية</a
+          ><a href="/riyadh.html" class="text-[13px] text-white/75 transition hover:text-white">الرياض</a
+          ><a href="/jeddah.html" class="text-[13px] font-bold text-white" aria-current="page">جدة</a
+          ><a href="/#projects" class="text-[13px] text-white/75 transition hover:text-white">للإيجار</a
+          ><a href="/#projects" class="text-[13px] text-white/75 transition hover:text-white">للبيع</a
+          ><a href="/#projects" class="text-[13px] text-white/75 transition hover:text-white">المشاريع</a
+          ><a href="/services.html" class="text-[13px] text-white/75 transition hover:text-white">الخدمات</a
+          ><a href="/articles.html" class="text-[13px] text-white/75 transition hover:text-white">المقالات</a
+          ><a href="/contact.html" class="text-[13px] text-white/75 transition hover:text-white">تواصل معنا</a>
+          </nav>
+        </div>
+
+        <div class="hidden items-center gap-3 lg:flex">
+          <a href="/#market" class="inline-flex h-10 items-center justify-center rounded-full bg-gold px-6 text-xs font-medium text-white transition hover:bg-gold-dark">سوّق مشروعك</a>
+          <button type="button" class="inline-flex h-10 cursor-pointer items-center gap-1.5 rounded-full border border-white/60 px-4 text-xs font-medium text-white transition hover:bg-white/10">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9S14.5 18.3 12 21c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" /></svg>
+            EN
+            <svg class="size-3.5 text-white/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+          </button>
+        </div>
+
+        <button id="menu-open" type="button" class="grid size-10 place-items-center rounded-full border border-white/40 text-white lg:hidden" aria-label="القائمة">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16" /><path d="M4 12h16" /><path d="M4 17h16" /></svg>
+        </button>
+        </div>
+      </div>
+    </header>
+
+    <div id="menu-overlay" class="pointer-events-none fixed inset-0 z-[60] bg-black/50 opacity-0 lg:hidden"></div>
+    <aside id="mobile-menu" class="fixed inset-y-0 right-0 z-[70] flex w-[82%] max-w-sm flex-col bg-dark p-6 text-white lg:hidden">
+      <div class="flex items-center justify-between">
+        <img src="/src/assets/images/logo.svg" alt="البيت العتيق" class="h-10 w-auto" />
+        <button id="menu-close" type="button" class="grid size-10 place-items-center rounded-full border border-white/20" aria-label="إغلاق">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+        </button>
+      </div>
+      <nav class="mt-10 flex flex-col">
+        <a href="/" data-menu-link class="border-b border-white/10 py-4 text-base">الرئيسية</a
+        ><a href="/riyadh.html" data-menu-link class="border-b border-white/10 py-4 text-base">الرياض</a
+        ><a href="/jeddah.html" data-menu-link class="border-b border-white/10 py-4 text-base font-bold text-gold">جدة</a
+        ><a href="/#projects" data-menu-link class="border-b border-white/10 py-4 text-base">للإيجار</a
+        ><a href="/#projects" data-menu-link class="border-b border-white/10 py-4 text-base">للبيع</a
+        ><a href="/#projects" data-menu-link class="border-b border-white/10 py-4 text-base">المشاريع</a
+        ><a href="/services.html" data-menu-link class="border-b border-white/10 py-4 text-base">الخدمات</a
+        ><a href="/articles.html" data-menu-link class="border-b border-white/10 py-4 text-base">المقالات</a
+        ><a href="/contact.html" data-menu-link class="border-b border-white/10 py-4 text-base">تواصل معنا</a>
+      </nav>
+      <div class="mt-auto flex flex-col gap-3">
+        <a href="/#market" data-menu-link class="inline-flex h-12 items-center justify-center rounded-full bg-gold text-sm font-medium text-white">سوّق مشروعك</a>
+        <button type="button" class="inline-flex h-12 items-center justify-center rounded-full border border-white/70 text-sm font-medium text-white">EN</button>
+      </div>
+    </aside>
+
+    <main>
+      <!-- Hero -->
+      <section class="relative">
+        <div class="relative overflow-hidden bg-dark">
+          <img src="/src/assets/images/tower.png" alt="" class="absolute inset-0 size-full animate-kenburns object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/40 to-black/75"></div>
+          <div class="container-x relative flex min-h-[600px] flex-col items-center justify-center pb-32 pt-32 text-center text-white lg:min-h-[700px]">
+            <nav class="hero-in flex items-center gap-1.5 text-xs text-white/85" aria-label="مسار التنقل" style="--d: 100ms">
+              <a href="/" class="transition hover:text-gold">الرئيسية</a>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">مدينة جدة</span>
+            </nav>
+            <h1 class="hero-in mt-6 text-4xl font-bold sm:text-5xl lg:text-[58px]" style="--d: 200ms">عقارات جدة إيجار وتمليك</h1>
+            <p class="hero-in mx-auto mt-6 max-w-[580px] text-sm leading-7 text-white/85 sm:text-base sm:leading-8" style="--d: 320ms">
+              شقق وفلل وأدوار للإيجار والتمليك في أحياء جدة المختارة. تصفّح الأحياء والمشاريع والوحدات المتاحة، ودع فريقنا يرتّب لك المعاينة حتى توقيع العقد.
+            </p>
+          </div>
+        </div>
+
+        <!-- Search card -->
+        <div class="container-x relative z-10 -mt-16 lg:-mt-20">
+          <div
+            class="hero-in rounded-2xl bg-white p-5 shadow-[0_4px_24px_rgba(0,0,0,0.06)] sm:px-7 sm:py-6"
+            style="--d: 600ms"
+          >
+            <form
+              id="search-form"
+              class="grid gap-4 md:grid-cols-[minmax(0,3fr)_minmax(0,1fr)_120px] md:items-end md:gap-3"
+            >
+              <label class="flex flex-col gap-2">
+                <span class="text-sm font-medium text-dark"
+                  >الحي أو المشروع أو كود الوحدة</span
+                >
+                <input
+                  type="text"
+                  placeholder="مثال: حي الشاطئ"
+                  class="h-11 w-full rounded-full border border-line bg-white px-5 text-sm text-dark outline-none transition placeholder:text-[#9a9a9a] focus:border-dark/40"
+                />
+              </label>
+              <label class="flex flex-col gap-2">
+                <span class="text-sm font-medium text-dark">نوع العملية</span>
+                <span class="relative">
+                  <select
+                    class="h-11 w-full cursor-pointer appearance-none rounded-full border border-line bg-white px-5 text-sm text-dark outline-none transition focus:border-dark/40"
+                  >
+                    <option>ايجار</option>
+                    <option>بيع</option>
+                  </select>
+                  <svg
+                    class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-[#9a9a9a]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </span>
+              </label>
+              <button
+                type="submit"
+                class="h-11 w-full cursor-pointer rounded-full bg-dark text-sm font-medium text-white"
+              >
+                بحث
+              </button>
+            </form>
+            <div class="no-scrollbar mt-5 flex gap-2 overflow-x-auto">
+              <button type="button" data-quick class="h-11 shrink-0 cursor-pointer whitespace-nowrap rounded-full border border-line bg-white px-5 text-sm text-dark transition hover:border-gold">حي الشاطئ</button>
+              <button type="button" data-quick class="h-11 shrink-0 cursor-pointer whitespace-nowrap rounded-full border border-line bg-white px-5 text-sm text-dark transition hover:border-gold">حي الروضة</button>
+              <button type="button" data-quick class="h-11 shrink-0 cursor-pointer whitespace-nowrap rounded-full border border-line bg-white px-5 text-sm text-dark transition hover:border-gold">حي الحمراء</button>
+              <button type="button" data-quick class="h-11 shrink-0 cursor-pointer whitespace-nowrap rounded-full border border-line bg-white px-5 text-sm text-dark transition hover:border-gold">حي النعيم</button>
+              <button type="button" data-quick class="h-11 shrink-0 cursor-pointer whitespace-nowrap rounded-full border border-line bg-white px-5 text-sm text-dark transition hover:border-gold">حي أبحر الشمالية</button>
+              <button type="button" data-quick class="h-11 shrink-0 cursor-pointer whitespace-nowrap rounded-full border border-line bg-white px-5 text-sm text-dark transition hover:border-gold">حي الزهراء</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="bg-cream py-14 lg:py-16">
+        <div class="mx-auto w-full max-w-[1096px] px-4 sm:px-6 lg:px-4">
+          <div class="grid grid-cols-2 gap-x-8 gap-y-10 text-center lg:grid-cols-4">
+            <div data-reveal="up" style="--d: 0ms">
+              <p class="text-3xl font-bold text-dark lg:text-[40px]" dir="ltr"><span data-count="216">0</span></p>
+              <p class="mt-2 text-sm text-ink">وحدة متاحة</p>
+            </div>
+            <div data-reveal="up" style="--d: 90ms">
+              <p class="text-3xl font-bold text-dark lg:text-[40px]" dir="ltr">+<span data-count="20">0</span></p>
+              <p class="mt-2 text-sm text-ink">حي مُغطّى</p>
+            </div>
+            <div data-reveal="up" style="--d: 180ms">
+              <p class="text-3xl font-bold text-dark lg:text-[40px]" dir="ltr">+<span data-count="120">0</span></p>
+              <p class="mt-2 text-sm text-ink">مشروع</p>
+            </div>
+            <div data-reveal="up" style="--d: 270ms">
+              <p class="text-3xl font-bold text-dark lg:text-[40px]" dir="ltr">+<span data-count="397">0</span></p>
+              <p class="mt-2 text-sm text-ink">وحدة تم بيعها</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="pt-16 lg:pt-20"></div>
+      <section id="map-section" class="bg-white pb-16 pt-4 lg:pb-20">
+        <div class="container-x">
+          <div class="text-center" data-reveal="up">
+            <h2 class="text-2xl font-bold text-dark sm:text-[28px]">خريطة أحياء جدة</h2>
+            <p class="mx-auto mt-4 max-w-[440px] text-[15px] leading-7 text-ink">اختر الحي الذي يهمك لتصل إلى أسعاره ومعروضه المتاح ودليل السكن فيه.</p>
+          </div>
+
+          <!-- Filters -->
+          <div class="mx-auto mt-8 grid max-w-[920px] grid-cols-1 gap-3 sm:grid-cols-3" data-reveal="up" style="--d: 120ms">
+            <label class="relative block">
+              <span class="sr-only">المنطقة</span>
+              <select id="map-region" class="h-11 w-full cursor-pointer appearance-none rounded-full border border-line bg-white px-5 text-sm text-dark outline-none transition focus:border-dark/40">
+                
+              </select>
+              <svg class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-[#9a9a9a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </label>
+            <label class="relative block">
+              <span class="sr-only">نوع العملية</span>
+              <select id="map-deal" class="h-11 w-full cursor-pointer appearance-none rounded-full border border-line bg-white px-5 text-sm text-dark outline-none transition focus:border-dark/40">
+                <option>ايجار</option><option>بيع</option>
+              </select>
+              <svg class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-[#9a9a9a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </label>
+            <label class="relative block">
+              <span class="sr-only">نوع العقار</span>
+              <select id="map-property" class="h-11 w-full cursor-pointer appearance-none rounded-full border border-line bg-white px-5 text-sm text-dark outline-none transition focus:border-dark/40">
+                <option>شقق</option><option>فلل</option><option>أراضي</option><option>مكاتب</option>
+              </select>
+              <svg class="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-[#9a9a9a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </label>
+          </div>
+
+          <!-- Districts of the selected region (rendered from data in main.js) -->
+          <div id="map-districts" class="no-scrollbar mx-auto mt-5 flex max-w-[920px] gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:justify-center" data-reveal="up" style="--d: 200ms"></div>
+
+          <!-- Google map of Jeddah -->
+          <div class="relative mx-auto mt-8 max-w-[1000px] overflow-hidden rounded-3xl border border-line" data-reveal="fade" style="--d: 250ms">
+            <iframe id="city-map" data-city="جدة" data-districts="الشاطئ،الروضة،الحمراء،النعيم،أبحر الشمالية،الزهراء،المحمدية،السلامة،البساتين" class="block h-[420px] w-full sm:h-[520px]" src="https://www.google.com/maps?q=%D8%AC%D8%AF%D8%A9%D8%8C%20%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9&amp;z=11&amp;hl=ar&amp;output=embed" title="خريطة جدة على خرائط جوجل" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Districts -->
+      <section class="pb-16 lg:pb-24">
+        <div class="mx-auto w-full max-w-[1096px] px-4 sm:px-6 lg:px-4">
+          <div class="text-center" data-reveal="up">
+            <h2 class="text-2xl font-bold text-dark sm:text-[28px]">أحياء جدة</h2>
+            <p class="mx-auto mt-3 max-w-md text-sm leading-7 text-ink">لكل حي صفحة تعرض متوسط الأسعار والمعروض المتاح ودليل السكن فيه.</p>
+          </div>
+          <div class="mt-12">
+            <div class="flex items-center justify-between gap-4" data-reveal="up">
+              <h3 class="text-lg font-bold text-dark sm:text-xl">شمال جدة</h3>
+              <a href="/district.html" class="text-sm text-dark transition hover:text-gold">عرض الكل</a>
+            </div>
+            <div class="mt-5 grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4 lg:gap-x-5">
+            <a href="/district.html" class="group block" data-reveal="up" style="--d: 0ms">
+              <div class="img-zoom aspect-[255/190] rounded-2xl bg-cream">
+                <img src="/src/assets/images/villa-day.png" alt="حي أبحر الشمالية" class="size-full object-cover" loading="lazy" />
+              </div>
+              <h4 class="mt-3 text-base font-bold text-dark transition group-hover:text-gold">حي أبحر الشمالية</h4>
+              <p class="mt-1 text-xs text-ink">50 وحدة</p>
+            </a>
+            <a href="/district.html" class="group block" data-reveal="up" style="--d: 90ms">
+              <div class="img-zoom aspect-[255/190] rounded-2xl bg-cream">
+                <img src="/src/assets/images/building-lit.png" alt="حي الشاطئ" class="size-full object-cover" loading="lazy" />
+              </div>
+              <h4 class="mt-3 text-base font-bold text-dark transition group-hover:text-gold">حي الشاطئ</h4>
+              <p class="mt-1 text-xs text-ink">30 وحدة</p>
+            </a>
+            <a href="/district.html" class="group block" data-reveal="up" style="--d: 180ms">
+              <div class="img-zoom aspect-[255/190] rounded-2xl bg-cream">
+                <img src="/src/assets/images/building-night.png" alt="حي المحمدية" class="size-full object-cover" loading="lazy" />
+              </div>
+              <h4 class="mt-3 text-base font-bold text-dark transition group-hover:text-gold">حي المحمدية</h4>
+              <p class="mt-1 text-xs text-ink">25 وحدة</p>
+            </a>
+            <a href="/district.html" class="group block" data-reveal="up" style="--d: 270ms">
+              <div class="img-zoom aspect-[255/190] rounded-2xl bg-cream">
+                <img src="/src/assets/images/tower.png" alt="حي النعيم" class="size-full object-cover" loading="lazy" />
+              </div>
+              <h4 class="mt-3 text-base font-bold text-dark transition group-hover:text-gold">حي النعيم</h4>
+              <p class="mt-1 text-xs text-ink">25 وحدة</p>
+            </a>
+            </div>
+          </div>
+          <div class="mt-12">
+            <div class="flex items-center justify-between gap-4" data-reveal="up">
+              <h3 class="text-lg font-bold text-dark sm:text-xl">شرق جدة</h3>
+              <a href="/district.html" class="text-sm text-dark transition hover:text-gold">عرض الكل</a>
+            </div>
+            <div class="mt-5 grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4 lg:gap-x-5">
+            <a href="/district.html" class="group block" data-reveal="up" style="--d: 0ms">
+              <div class="img-zoom aspect-[255/190] rounded-2xl bg-cream">
+                <img src="/src/assets/images/villa-day.png" alt="حي الصفا" class="size-full object-cover" loading="lazy" />
+              </div>
+              <h4 class="mt-3 text-base font-bold text-dark transition group-hover:text-gold">حي الصفا</h4>
+              <p class="mt-1 text-xs text-ink">50 وحدة</p>
+            </a>
+            <a href="/district.html" class="group block" data-reveal="up" style="--d: 90ms">
+              <div class="img-zoom aspect-[255/190] rounded-2xl bg-cream">
+                <img src="/src/assets/images/building-lit.png" alt="حي المروة" class="size-full object-cover" loading="lazy" />
+              </div>
+              <h4 class="mt-3 text-base font-bold text-dark transition group-hover:text-gold">حي المروة</h4>
+              <p class="mt-1 text-xs text-ink">30 وحدة</p>
+            </a>
+            <a href="/district.html" class="group block" data-reveal="up" style="--d: 180ms">
+              <div class="img-zoom aspect-[255/190] rounded-2xl bg-cream">
+                <img src="/src/assets/images/building-night.png" alt="حي السامر" class="size-full object-cover" loading="lazy" />
+              </div>
+              <h4 class="mt-3 text-base font-bold text-dark transition group-hover:text-gold">حي السامر</h4>
+              <p class="mt-1 text-xs text-ink">25 وحدة</p>
+            </a>
+            <a href="/district.html" class="group block" data-reveal="up" style="--d: 270ms">
+              <div class="img-zoom aspect-[255/190] rounded-2xl bg-cream">
+                <img src="/src/assets/images/tower.png" alt="حي الأجواد" class="size-full object-cover" loading="lazy" />
+              </div>
+              <h4 class="mt-3 text-base font-bold text-dark transition group-hover:text-gold">حي الأجواد</h4>
+              <p class="mt-1 text-xs text-ink">25 وحدة</p>
+            </a>
+            </div>
+          </div>
+          <div class="mt-12">
+            <div class="flex items-center justify-between gap-4" data-reveal="up">
+              <h3 class="text-lg font-bold text-dark sm:text-xl">غرب وجنوب جدة</h3>
+              <a href="/district.html" class="text-sm text-dark transition hover:text-gold">عرض الكل</a>
+            </div>
+            <div class="mt-5 grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4 lg:gap-x-5">
+            <a href="/district.html" class="group block" data-reveal="up" style="--d: 0ms">
+              <div class="img-zoom aspect-[255/190] rounded-2xl bg-cream">
+                <img src="/src/assets/images/villa-day.png" alt="حي الحمراء" class="size-full object-cover" loading="lazy" />
+              </div>
+              <h4 class="mt-3 text-base font-bold text-dark transition group-hover:text-gold">حي الحمراء</h4>
+              <p class="mt-1 text-xs text-ink">50 وحدة</p>
+            </a>
+            <a href="/district.html" class="group block" data-reveal="up" style="--d: 90ms">
+              <div class="img-zoom aspect-[255/190] rounded-2xl bg-cream">
+                <img src="/src/assets/images/building-lit.png" alt="حي الروضة" class="size-full object-cover" loading="lazy" />
+              </div>
+              <h4 class="mt-3 text-base font-bold text-dark transition group-hover:text-gold">حي الروضة</h4>
+              <p class="mt-1 text-xs text-ink">30 وحدة</p>
+            </a>
+            <a href="/district.html" class="group block" data-reveal="up" style="--d: 180ms">
+              <div class="img-zoom aspect-[255/190] rounded-2xl bg-cream">
+                <img src="/src/assets/images/building-night.png" alt="حي الزهراء" class="size-full object-cover" loading="lazy" />
+              </div>
+              <h4 class="mt-3 text-base font-bold text-dark transition group-hover:text-gold">حي الزهراء</h4>
+              <p class="mt-1 text-xs text-ink">25 وحدة</p>
+            </a>
+            <a href="/district.html" class="group block" data-reveal="up" style="--d: 270ms">
+              <div class="img-zoom aspect-[255/190] rounded-2xl bg-cream">
+                <img src="/src/assets/images/tower.png" alt="حي البلد" class="size-full object-cover" loading="lazy" />
+              </div>
+              <h4 class="mt-3 text-base font-bold text-dark transition group-hover:text-gold">حي البلد</h4>
+              <p class="mt-1 text-xs text-ink">25 وحدة</p>
+            </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Market -->
+      <section class="overflow-hidden bg-dark text-white">
+        <div class="grid lg:grid-cols-2">
+          <div class="flex items-center px-4 py-16 sm:px-6 lg:py-24 lg:pl-16 lg:pr-[max(32px,calc((100vw_-_1064px)/2))]" data-reveal="right">
+            <div>
+              <h2 class="text-2xl font-bold sm:text-[28px]">سوق العقار في جدة</h2>
+              <div class="mt-5 flex max-w-lg flex-col gap-4 text-sm leading-7 text-white/70">
+                <p>تُعد جدة بوابة الحرمين وعروس البحر الأحمر، وتشهد نمواً عمرانياً متسارعاً مدفوعاً بمشاريع الواجهة البحرية وتطوير الأحياء، ما يجعلها من أكثر أسواق العقار نشاطاً في المملكة.</p>
+                <p>يتركّز الطلب على أحياء الشمال القريبة من الكورنيش وأبحر لحداثة مخططاتها، بينما تقدّم أحياء الشرق والجنوب خيارات أكثر تنوعاً في الأسعار.</p>
+                <p>نحن في البيت العتيق نتابع هذه التحولات باستمرار، لنقدّم لعملائنا معلومات واضحة تساعدهم على اتخاذ قرار السكن أو الاستثمار المناسب.</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative min-h-[320px] lg:min-h-[560px]">
+            <img src="/src/assets/images/tower-crop.png" alt="أبراج جدة" class="absolute inset-0 size-full object-cover" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="overflow-hidden bg-cream py-16 lg:py-24"
+      >
+        <div
+          class="container-x grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
+        >
+          <div data-reveal="right">
+            <p class="text-xs text-muted">للمطورين</p>
+            <h2 class="mt-3 text-2xl font-bold sm:text-3xl lg:text-[34px]">
+              لديك مشروع تريد تسويقه؟
+            </h2>
+            <p
+              class="mt-5 max-w-lg text-sm leading-8 text-ink sm:text-base"
+            >
+              نتولى تسويق مشروعك من الدراسة والتسعير إلى الحملات والمعاينات،
+              بفريق يعرف السوق وخطة واضحة حتى بيع آخر وحدة.
+            </p>
+            <a href="/contact.html" class="btn btn-gold mt-8"
+              >اطلب عرضاً تسويقياً
+              <svg
+                class="size-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M19 12H5" />
+                <path d="m12 19-7-7 7-7" /></svg
+            ></a>
+          </div>
+          <div class="curtain rounded-3xl" data-reveal="left">
+            <div class="img-zoom rounded-3xl">
+              <img
+                src="/src/assets/images/meeting-square.png"
+                alt="فريق البيت العتيق مع العملاء"
+                class="aspect-[4/3] w-full rounded-3xl object-cover lg:aspect-square"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="overflow-hidden py-16 lg:py-24">
+        <div
+          class="container-x grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
+        >
+          <div class="curtain rounded-3xl lg:order-1" data-reveal="right">
+            <div class="img-zoom rounded-3xl">
+              <img
+                src="/src/assets/images/villa.png"
+                alt="مشروع سكني"
+                class="aspect-[4/3] w-full rounded-3xl object-cover lg:aspect-square"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="lg:order-2" data-reveal="left">
+            <p class="text-xs text-muted">للباحثين عن سكن</p>
+            <h2 class="section-title mt-3">تبحث عن وحدة؟</h2>
+            <p class="section-sub max-w-lg">
+              أخبرنا بما تبحث عنه، وفريق يرتّب لك المعاينة وإجراءات العقد. وحدات
+              مختارة بعناية في أفضل أحياء جدة.
+            </p>
+            <a href="#projects" class="btn btn-outline-dark mt-8"
+              >تصفّح المعروض
+              <svg
+                class="size-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M19 12H5" />
+                <path d="m12 19-7-7 7-7" /></svg
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        class="overflow-hidden py-16 lg:py-20"
+      >
+        <div class="container-x">
+          <div
+            class="mx-auto flex max-w-[1040px] items-center justify-between gap-4"
+            data-reveal="up"
+          >
+            <h2 class="text-2xl font-bold text-dark sm:text-[32px]">
+              مشاريعنا في جدة
+            </h2>
+            <div class="flex items-center gap-3">
+              <button
+                type="button"
+                data-slider-prev="projects"
+                class="cursor-pointer text-dark transition disabled:cursor-default disabled:text-[#b5b5b5]"
+                aria-label="السابق"
+              >
+                <svg
+                  class="size-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                data-slider-next="projects"
+                class="cursor-pointer text-dark transition disabled:cursor-default disabled:text-[#b5b5b5]"
+                aria-label="التالي"
+              >
+                <svg
+                  class="size-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M19 12H5" />
+                  <path d="m12 19-7-7 7-7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          data-slider="projects"
+          class="no-scrollbar mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pl-4 pr-[max(16px,calc((100vw_-_1040px)/2))] scroll-pr-[max(16px,calc((100vw_-_1040px)/2))] lg:mt-12"
+        >
+          <article
+            class="group w-[270px] shrink-0 snap-start sm:w-[320px]"
+            data-reveal="up"
+            style="--d: 0ms"
+          >
+            <a href="/property.html" class="block">
+              <div class="img-zoom aspect-[6/5] rounded-[20px]">
+                <img
+                  src="/src/assets/images/building-lit.png"
+                  alt="شقة للإيجار في شارع الظهران"
+                  class="size-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <span
+                class="mt-5 inline-flex h-[22px] items-center rounded-full px-3 text-xs bg-gold text-white"
+                >متاح</span
+              >
+              <p class="mt-3 flex items-center gap-1.5 text-sm text-ink">
+                <svg
+                  class="size-4 shrink-0 text-dark"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                  />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                حي الشاطئ، جدة
+              </p>
+              <h3 class="mt-3 text-lg font-bold text-dark">
+                شقة للإيجار في شارع الظهران
+              </h3>
+            </a>
+          </article>
+          <article
+            class="group w-[270px] shrink-0 snap-start sm:w-[320px]"
+            data-reveal="up"
+            style="--d: 120ms"
+          >
+            <a href="/property.html" class="block">
+              <div class="img-zoom aspect-[6/5] rounded-[20px]">
+                <img
+                  src="/src/assets/images/villa-day.png"
+                  alt="شقة للإيجار في حي عريض"
+                  class="size-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <span
+                class="mt-5 inline-flex h-[22px] items-center rounded-full px-3 text-xs border border-line bg-white text-dark"
+                >محجوز</span
+              >
+              <p class="mt-3 flex items-center gap-1.5 text-sm text-ink">
+                <svg
+                  class="size-4 shrink-0 text-dark"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                  />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                حي الشاطئ، جدة
+              </p>
+              <h3 class="mt-3 text-lg font-bold text-dark">
+                شقة للإيجار في حي عريض
+              </h3>
+            </a>
+          </article>
+          <article
+            class="group w-[270px] shrink-0 snap-start sm:w-[320px]"
+            data-reveal="up"
+            style="--d: 240ms"
+          >
+            <a href="/property.html" class="block">
+              <div class="img-zoom aspect-[6/5] rounded-[20px]">
+                <img
+                  src="/src/assets/images/villa.png"
+                  alt="شقة للإيجار في حي عريض"
+                  class="size-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <span
+                class="mt-5 inline-flex h-[22px] items-center rounded-full px-3 text-xs bg-dark text-white"
+                >مباع</span
+              >
+              <p class="mt-3 flex items-center gap-1.5 text-sm text-ink">
+                <svg
+                  class="size-4 shrink-0 text-dark"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                  />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                حي الشاطئ، جدة
+              </p>
+              <h3 class="mt-3 text-lg font-bold text-dark">
+                شقة للإيجار في حي عريض
+              </h3>
+            </a>
+          </article>
+          <article
+            class="group w-[270px] shrink-0 snap-start sm:w-[320px]"
+            data-reveal="up"
+            style="--d: 360ms"
+          >
+            <a href="/property.html" class="block">
+              <div class="img-zoom aspect-[6/5] rounded-[20px]">
+                <img
+                  src="/src/assets/images/tower.png"
+                  alt="شقة للإيجار في حي عريض"
+                  class="size-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <span
+                class="mt-5 inline-flex h-[22px] items-center rounded-full px-3 text-xs bg-gold text-white"
+                >متاح</span
+              >
+              <p class="mt-3 flex items-center gap-1.5 text-sm text-ink">
+                <svg
+                  class="size-4 shrink-0 text-dark"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                  />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                حي الشاطئ، جدة
+              </p>
+              <h3 class="mt-3 text-lg font-bold text-dark">
+                شقة للإيجار في حي عريض
+              </h3>
+            </a>
+          </article>
+          <article
+            class="group w-[270px] shrink-0 snap-start sm:w-[320px]"
+            data-reveal="up"
+            style="--d: 360ms"
+          >
+            <a href="/property.html" class="block">
+              <div class="img-zoom aspect-[6/5] rounded-[20px]">
+                <img
+                  src="/src/assets/images/building-night.png"
+                  alt="شقة للإيجار في حي عريض"
+                  class="size-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <span
+                class="mt-5 inline-flex h-[22px] items-center rounded-full px-3 text-xs bg-gold text-white"
+                >متاح</span
+              >
+              <p class="mt-3 flex items-center gap-1.5 text-sm text-ink">
+                <svg
+                  class="size-4 shrink-0 text-dark"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                  />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                حي الشاطئ، جدة
+              </p>
+              <h3 class="mt-3 text-lg font-bold text-dark">
+                شقة للإيجار في حي عريض
+              </h3>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="pb-16 lg:pb-24">
+        <div class="mx-auto w-full max-w-[812px] px-4 sm:px-6 lg:px-4">
+          <h2 class="text-center text-2xl font-bold text-dark sm:text-[28px]" data-reveal="up">أسئلة شائعة عن العقار في جدة</h2>
+          <div class="mt-8">
+            <div class="faq-item border-b border-line" data-reveal="up" style="--d: 0ms">
+              <button type="button" class="faq-btn flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-right text-sm text-dark sm:text-base" aria-expanded="false">
+                <span>ما متوسط إيجار الشقق في جدة؟</span>
+                <span class="faq-icon shrink-0 text-dark"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="M5 12h14" /></svg></span>
+              </button>
+              <div class="faq-body">
+                <div class="overflow-hidden">
+                  <p class="pb-5 text-sm leading-7 text-muted">يختلف متوسط الإيجار حسب الحي والمساحة، ويمكنك الاطلاع على أسعار كل حي في صفحته على موقعنا.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item border-b border-line" data-reveal="up" style="--d: 60ms">
+              <button type="button" class="faq-btn flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-right text-sm text-dark sm:text-base" aria-expanded="false">
+                <span>ما أفضل أحياء جدة للسكن؟</span>
+                <span class="faq-icon shrink-0 text-dark"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="M5 12h14" /></svg></span>
+              </button>
+              <div class="faq-body">
+                <div class="overflow-hidden">
+                  <p class="pb-5 text-sm leading-7 text-muted">يعتمد ذلك على احتياجك من حيث الميزانية والقرب من العمل والمدارس، ومن أكثر الأحياء طلباً الشاطئ والروضة والمحمدية والنعيم.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item border-b border-line" data-reveal="up" style="--d: 120ms">
+              <button type="button" class="faq-btn flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-right text-sm text-dark sm:text-base" aria-expanded="false">
+                <span>هل تتعاملون خارج جدة؟</span>
+                <span class="faq-icon shrink-0 text-dark"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="M5 12h14" /></svg></span>
+              </button>
+              <div class="faq-body">
+                <div class="overflow-hidden">
+                  <p class="pb-5 text-sm leading-7 text-muted">نعم، نخدم عملاءنا في جدة والرياض، ونتوسع تدريجياً إلى مدن أخرى في المملكة.</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item border-b border-line" data-reveal="up" style="--d: 180ms">
+              <button type="button" class="faq-btn flex w-full cursor-pointer items-center justify-between gap-4 py-5 text-right text-sm text-dark sm:text-base" aria-expanded="false">
+                <span>كيف أستأجر وحدة عبر البيت العتيق؟</span>
+                <span class="faq-icon shrink-0 text-dark"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14" /><path d="M5 12h14" /></svg></span>
+              </button>
+              <div class="faq-body">
+                <div class="overflow-hidden">
+                  <p class="pb-5 text-sm leading-7 text-muted">اختر الوحدة المناسبة واطلب معاينة، وسيرتّب فريقنا موعد المعاينة ويرافقك في إجراءات العقد حتى التوثيق.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="relative overflow-hidden">
+        <img src="/src/assets/images/hero.png" alt="" class="absolute inset-0 size-full object-cover" data-parallax loading="lazy" />
+        <div class="absolute inset-0 bg-black/45"></div>
+        <div class="container-x relative flex min-h-[460px] flex-col items-center justify-center py-20 text-center text-white lg:min-h-[550px]" data-reveal="zoom">
+          <h2 class="text-2xl font-bold sm:text-3xl lg:text-[34px]">وجهتك المثالية للعيش والاستثمار</h2>
+          <p class="mx-auto mt-4 max-w-sm text-sm leading-7 text-white/85">
+            سواء كنت مالكاً أو مطوراً أو باحثاً عن وحدة، فريقنا جاهز لخدمتك.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a href="#contact" class="inline-flex h-12 min-w-[132px] items-center justify-center rounded-full bg-gold px-7 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-gold-dark">سجل اهتمامك</a>
+            <a href="https://wa.me/966500740220" target="_blank" rel="noopener" class="inline-flex h-12 min-w-[132px] items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-medium text-dark transition hover:-translate-y-0.5">
+              <svg class="size-[18px] text-[#25D366]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.9 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.2.1 12 .1 5.5.1.1 5.5.1 12c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.5 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.1-3.5-8.3z" /></svg>
+              واتساب
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark pt-16 text-white">
+      <div class="container-x grid gap-10 pb-16 sm:grid-cols-2 lg:grid-cols-[1.1fr_1fr_1fr_1fr_1.2fr] lg:pb-24">
+        <div data-reveal="up">
+          <img src="/src/assets/images/logo.svg" alt="البيت العتيق العقارية" class="h-10 w-auto" />
+        </div>
+        <div data-reveal="up" style="--d: 80ms">
+          <h3 class="text-sm font-bold">روابط سريعة</h3>
+          <ul class="mt-5 flex flex-col gap-4 text-sm text-white/70">
+            <li><a href="/#about" class="transition hover:text-gold">من نحن</a></li>
+            <li><a href="/#services" class="transition hover:text-gold">خدماتنا</a></li>
+            <li><a href="/#projects" class="transition hover:text-gold">مشاريعنا</a></li>
+            <li><a href="/articles.html" class="transition hover:text-gold">المركز الإعلامي</a></li>
+            <li><a href="/articles.html" class="transition hover:text-gold">المدونة</a></li>
+          </ul>
+        </div>
+        <div data-reveal="up" style="--d: 160ms">
+          <h3 class="text-sm font-bold">خدماتنا</h3>
+          <ul class="mt-5 flex flex-col gap-4 text-sm text-white/70">
+            <li><a href="/services.html#management" class="transition hover:text-gold">إدارة الأملاك</a></li>
+            <li><a href="/services.html#marketing" class="transition hover:text-gold">التسويق العقاري</a></li>
+            <li><a href="/services.html#brokerage" class="transition hover:text-gold">الوساطة العقارية</a></li>
+            <li><a href="/#projects" class="transition hover:text-gold">عقارات للبيع</a></li>
+            <li><a href="/#projects" class="transition hover:text-gold">عقارات للإيجار</a></li>
+          </ul>
+        </div>
+        <div data-reveal="up" style="--d: 240ms">
+          <h3 class="text-sm font-bold">الدعم والسياسات</h3>
+          <ul class="mt-5 flex flex-col gap-4 text-sm text-white/70">
+            <li><a href="/faq.html" class="transition hover:text-gold">الأسئلة الشائعة</a></li>
+            <li><a href="/terms.html" class="transition hover:text-gold">الشروط والأحكام</a></li>
+            <li><a href="/privacy.html" class="transition hover:text-gold">سياسة الخصوصية</a></li>
+          </ul>
+        </div>
+        <div data-reveal="up" style="--d: 320ms">
+          <h3 class="text-sm font-bold">اتصل بنا</h3>
+          <ul class="mt-5 flex flex-col gap-4 text-sm text-white/70">
+            <li><a href="tel:+966920024941" class="transition hover:text-gold">رقم التواصل: <span dir="ltr">+966920024941</span></a></li>
+            <li><a href="https://wa.me/966500740220" target="_blank" rel="noopener" class="transition hover:text-gold">واتساب: <span dir="ltr">+966500740220</span></a></li>
+            <li><a href="mailto:info@oh.sa" class="transition hover:text-gold">الإيميل: <span class="text-white">info@oh.sa</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-x flex flex-col-reverse items-center justify-between gap-5 pb-10 sm:flex-row">
+        <p class="text-center text-xs text-white/70">© جميع الحقوق محفوظة شركة البيت العتيق العقارية 2026</p>
+        <div class="flex items-center gap-5 text-white/90">
+          <a href="#" class="transition hover:text-gold" aria-label="YouTube"><svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8zM9.7 15V9l5.8 3-5.8 3z" /></svg></a>
+          <a href="#" class="transition hover:text-gold" aria-label="LinkedIn"><svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 2H3.6C2.7 2 2 2.7 2 3.6v16.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V3.6c0-.9-.7-1.6-1.6-1.6zM8 19H5V9.5h3V19zM6.5 8.2a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V19h-3V9.5h2.9v1.3c.4-.8 1.4-1.5 2.8-1.5 3 0 3.6 2 3.6 4.6V19z" /></svg></a>
+          <a href="#" class="transition hover:text-gold" aria-label="X"><svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 2.5h3.2l-7 8 8.2 11h-6.4l-5-6.6-5.8 6.6H1.8l7.5-8.6L1.4 2.5H8l4.5 6 5.3-6zm-1.1 17h1.8L7.3 4.3H5.4l11.3 15.2z" /></svg></a>
+          <a href="#" class="transition hover:text-gold" aria-label="Facebook"><svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z" /></svg></a>
+          <a href="#" class="transition hover:text-gold" aria-label="Instagram"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r=".6" fill="currentColor" /></svg></a>
+        </div>
+      </div>
+    </footer>
+
+    <button id="to-top" type="button" class="fixed bottom-5 left-5 z-40 grid size-11 translate-y-20 place-items-center rounded-full bg-dark text-white opacity-0 shadow-xl transition duration-500 hover:bg-gold hover:text-dark" aria-label="للأعلى">
+      <svg class="size-5 rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+    </button>
+
+    <!-- AI assistant chat -->
+    <div id="chat" class="fixed bottom-5 right-5 z-50">
+      <div
+        id="chat-panel"
+        class="pointer-events-none absolute bottom-full right-0 mb-4 flex h-[min(480px,calc(100dvh_-_120px))] w-[calc(100vw_-_40px)] origin-bottom-right translate-y-4 scale-95 flex-col overflow-hidden rounded-2xl border border-[#ececec] bg-white opacity-0 shadow-[0_10px_40px_rgba(0,0,0,0.12)] transition duration-300 sm:w-[360px]"
+        role="dialog"
+        aria-label="مساعدك العقاري الذكي"
+        aria-hidden="true"
+      >
+        <div class="flex items-center justify-between border-b border-[#ececec] px-4 py-3.5">
+          <div class="flex items-center gap-2">
+            <span class="grid size-6 place-items-center rounded-full bg-gold text-white"><svg class="size-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 3.5c.5 3.6 2.4 5.5 6 6-3.6.5-5.5 2.4-6 6-.5-3.6-2.4-5.5-6-6 3.6-.5 5.5-2.4 6-6z" /><path d="M18 13c.25 1.8 1.2 2.75 3 3-1.8.25-2.75 1.2-3 3-.25-1.8-1.2-2.75-3-3 1.8-.25 2.75-1.2 3-3z" /></svg></span>
+            <h3 class="text-[15px] font-bold text-dark">مساعدك العقاري الذكي</h3>
+          </div>
+          <button id="chat-close" type="button" class="grid size-7 cursor-pointer place-items-center rounded-full text-dark transition hover:bg-[#f2f2f2]" aria-label="إغلاق">
+            <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+          </button>
+        </div>
+
+        <div id="chat-log" class="flex flex-1 flex-col gap-4 overflow-y-auto px-4 py-4">
+          <div class="flex items-start gap-2">
+            <span class="grid size-6 shrink-0 place-items-center rounded-full bg-gold text-white"><svg class="size-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 3.5c.5 3.6 2.4 5.5 6 6-3.6.5-5.5 2.4-6 6-.5-3.6-2.4-5.5-6-6 3.6-.5 5.5-2.4 6-6z" /><path d="M18 13c.25 1.8 1.2 2.75 3 3-1.8.25-2.75 1.2-3 3-.25-1.8-1.2-2.75-3-3 1.8-.25 2.75-1.2 3-3z" /></svg></span>
+            <p class="text-justify text-[13px] leading-6 text-dark">
+              مرحباً بك! أنا مساعدك العقاري الذكي. يمكنني مساعدتك في تحليل بيانات السوق العقاري، إنشاء الخرائط الحرارية للأحياء، واستعراض تفاصيل الصفقات. كيف يمكنني خدمتك اليوم؟
+            </p>
+          </div>
+        </div>
+
+        <form id="chat-form" class="p-3">
+          <div class="flex items-center gap-2 rounded-xl border border-[#e6e6e6] bg-white px-3 py-2.5 transition focus-within:border-gold/60">
+            <button type="button" class="grid size-6 shrink-0 cursor-pointer place-items-center text-[#8a8a8a] transition hover:text-dark" aria-label="إرفاق">
+              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+            </button>
+            <input type="text" placeholder="صف المنطقة التي تريد رسمها وتحليلها" class="min-w-0 flex-1 bg-transparent text-xs text-dark outline-none placeholder:text-[#9a9a9a]" />
+            <button type="button" class="grid size-6 shrink-0 cursor-pointer place-items-center text-[#8a8a8a] transition hover:text-dark" aria-label="تسجيل صوتي">
+              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5 11a7 7 0 0 0 14 0M12 18v3" /></svg>
+            </button>
+            <button type="submit" class="grid size-7 shrink-0 cursor-pointer place-items-center rounded-full bg-gold text-white transition hover:bg-gold-dark" aria-label="إرسال">
+              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5" /><path d="m5 12 7-7 7 7" /></svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <button
+        id="chat-toggle"
+        type="button"
+        class="grid size-14 cursor-pointer place-items-center rounded-full bg-gold text-white shadow-[0_8px_24px_rgba(205,171,35,0.45)] transition duration-300 hover:scale-105"
+        aria-label="مساعدك العقاري الذكي"
+        aria-expanded="false"
+      >
+        <svg class="size-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 3.5c.5 3.6 2.4 5.5 6 6-3.6.5-5.5 2.4-6 6-.5-3.6-2.4-5.5-6-6 3.6-.5 5.5-2.4 6-6z" /><path d="M18 13c.25 1.8 1.2 2.75 3 3-1.8.25-2.75 1.2-3 3-.25-1.8-1.2-2.75-3-3 1.8-.25 2.75-1.2 3-3z" /></svg>
+      </button>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
