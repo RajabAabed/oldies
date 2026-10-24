@@ -30,7 +30,7 @@
   </head>
   <body>
     <!-- Header (light) -->
-    <header class="relative z-50 bg-white">
+    <header class="relative z-50 bg-[#f5f5f5]">
       <div class="container-x flex h-20 items-center justify-between gap-6">
         <a href="/" class="shrink-0" aria-label="البيت العتيق">
           <img src="/src/assets/images/logo.svg" alt="البيت العتيق العقارية" class="logo-dark h-9 w-auto lg:h-10" />
@@ -89,21 +89,59 @@
     </aside>
 
     <main>
-      <section class="pb-16 pt-14 lg:pb-24 lg:pt-24">
-        <div class="mx-auto w-full max-w-[812px] px-4 sm:px-6 lg:px-4">
-          <div data-reveal="up">
+      <section class="relative pb-12 pt-10 lg:pb-16 lg:pt-12">
+        <div class="absolute inset-x-0 top-0 h-full bg-[#f5f5f5] lg:h-[calc(100%-9rem)]" aria-hidden="true"></div>
+        <div class="relative mx-auto grid w-full max-w-[1100px] items-start gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_1.35fr] lg:gap-16 lg:px-4">
+          <div class="lg:pt-2" data-reveal="up">
             <nav class="flex items-center gap-1.5 text-xs text-dark" aria-label="مسار التنقل">
               <a href="/" class="transition hover:text-gold">الرئيسية</a>
               <svg class="size-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6" /></svg>
               <span aria-current="page">تواصل معنا</span>
             </nav>
-            <h1 class="mt-5 text-3xl font-bold text-dark sm:text-4xl lg:text-[38px]">تواصل مع مستشارك العقاري</h1>
-            <p class="mt-6 max-w-[780px] text-sm leading-7 text-ink">
+            <h1 class="mt-5 text-3xl font-bold leading-tight text-dark sm:text-4xl lg:text-[38px]">تواصل مع مستشارك العقاري</h1>
+            <p class="mt-6 text-sm leading-7 text-ink">
               نحن هنا لمساعدتك في اتخاذ أفضل قراراتك العقارية. تواصل مع فريقنا لاستكشاف أحدث الفرص الاستثمارية، أو لطرح أي استفسار يخص البيع، الشراء، والإيجار.
             </p>
           </div>
 
-          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:gap-5">
+          <form id="request-form" class="rounded-3xl border border-line bg-white p-5 sm:p-6" data-reveal="up" style="--d: 120ms">
+            <div class="grid gap-x-4 gap-y-5 sm:grid-cols-2">
+              <label class="flex flex-col gap-2">
+                <span class="text-sm font-medium text-dark">الاسم رباعي*</span>
+                <input type="text" name="name" required autocomplete="name" placeholder="الاسم رباعي" class="h-11 w-full rounded-full border border-line bg-white px-5 text-sm text-dark outline-none transition placeholder:text-[#9a9a9a] focus:border-dark/40" />
+              </label>
+              <label class="flex flex-col gap-2">
+                <span class="text-sm font-medium text-dark">رقم الهاتف*</span>
+                <span class="flex h-11 items-center overflow-hidden rounded-full border border-line bg-white transition focus-within:border-dark/40">
+                  <input type="tel" name="phone" required inputmode="tel" autocomplete="tel-national" placeholder="رقم الجوال" class="h-full min-w-0 flex-1 bg-transparent px-5 text-sm text-dark outline-none placeholder:text-[#9a9a9a]" />
+                  <span class="flex h-full shrink-0 items-center gap-2 border-r border-line px-4 text-sm text-dark" dir="ltr">
+                    <svg class="h-3 w-[18px] rounded-[2px]" viewBox="0 0 18 12" aria-hidden="true"><rect width="18" height="12" fill="#006c35" /><path d="M5 5.2h8M5.5 7.6h6.5" stroke="#fff" stroke-width=".9" stroke-linecap="round" /></svg>
+                    +966
+                  </span>
+                </span>
+              </label>
+              <label class="flex flex-col gap-2">
+                <span class="text-sm font-medium text-dark">البريد الإلكتروني*</span>
+                <input type="email" name="email" required autocomplete="email" placeholder="البريد الإلكتروني" class="h-11 w-full rounded-full border border-line bg-white px-5 text-sm text-dark outline-none transition placeholder:text-[#9a9a9a] focus:border-dark/40" />
+              </label>
+              <label class="flex flex-col gap-2">
+                <span class="text-sm font-medium text-dark">الموضوع</span>
+                <input type="text" name="subject" placeholder="اكتب الموضوع" class="h-11 w-full rounded-full border border-line bg-white px-5 text-sm text-dark outline-none transition placeholder:text-[#9a9a9a] focus:border-dark/40" />
+              </label>
+              <label class="flex flex-col gap-2 sm:col-span-2">
+                <span class="text-sm font-medium text-dark">ملاحظات إضافية</span>
+                <textarea name="notes" rows="4" placeholder="اكتب ملاحظات إضافية" class="w-full resize-none rounded-2xl border border-line bg-white px-5 py-3 text-sm text-dark outline-none transition placeholder:text-[#9a9a9a] focus:border-dark/40"></textarea>
+              </label>
+            </div>
+            <button type="submit" class="mt-6 inline-flex h-11 cursor-pointer items-center justify-center rounded-full bg-gold px-7 text-sm font-medium text-white transition hover:bg-gold-dark">إرسال طلب تقييم</button>
+            <p data-form-success class="mt-4 hidden text-sm text-[#1f8a4c]" role="status">تم استلام رسالتك، وسيتواصل معك فريقنا قريباً.</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="pb-16 lg:pb-24">
+        <div class="mx-auto w-full max-w-[1100px] px-4 sm:px-6 lg:px-4">
+          <div class="grid gap-4 sm:grid-cols-2 lg:gap-5">
             <div class="rounded-[20px] border border-line bg-white p-6 transition duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/5" data-reveal="up" style="--d: 0ms">
               <svg class="size-5 text-gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z" /></svg>
               <h2 class="mt-5 text-base font-bold text-dark">رقم الهاتف</h2>

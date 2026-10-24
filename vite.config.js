@@ -20,6 +20,7 @@ export default defineConfig({
         faq: resolve(import.meta.dirname, "faq.html"),
         terms: resolve(import.meta.dirname, "terms.html"),
         privacy: resolve(import.meta.dirname, "privacy.html"),
+        notFound: resolve(import.meta.dirname, "404.html"),
       },
     },
   },
