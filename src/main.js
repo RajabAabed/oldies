@@ -1,50 +1,3 @@
-/* ============================================================
-   Map data — edit this object to change what shows on the map.
-   Keys are the region ids in the SVG (<path id="...">).
-   - name:      label shown in the white tooltip on the map
-   - short:     name used in the dropdown and the "كل أحياء ..." chip
-   - districts: chips shown under the filters
-   - label:     optional {x, y} for the tooltip (SVG coords, 1000 x 825)
-   - prices:    gold badges; x/y optional (auto-placed when missing)
-   ============================================================ */
-const mapData = {
-  SAU1097: {
-    name: 'منطقة الرياض',
-    short: 'الرياض',
-    districts: ['النرجس', 'الملقا', 'العارض', 'الياسمين', 'القيروان', 'الصحافة', 'حطين', 'الرمال', 'قرطبة'],
-    label: { x: 494, y: 557 },
-    prices: [
-      { value: 20450, x: 453, y: 410 },
-      { value: 10000, x: 390, y: 456 },
-      { value: 40000, x: 557, y: 490 },
-      { value: 9200, x: 557, y: 586 },
-    ],
-  },
-  SAU1098: {
-    name: 'المنطقة الشرقية',
-    short: 'الشرقية',
-    districts: ['الدمام', 'الخبر', 'الظهران', 'القطيف', 'الجبيل', 'الأحساء'],
-    label: { x: 738, y: 539 },
-    prices: [
-      { value: 9200, x: 548, y: 223 },
-      { value: 40000, x: 862, y: 580 },
-      { value: 10000, x: 703, y: 650 },
-    ],
-  },
-  SAU888: { name: 'منطقة مكة المكرمة', short: 'مكة المكرمة', districts: ['جدة', 'مكة المكرمة', 'الطائف', 'رابغ'], prices: [{ value: 15300 }, { value: 8700 }, { value: 22100 }] },
-  SAU845: { name: 'منطقة المدينة المنورة', short: 'المدينة المنورة', districts: ['المدينة المنورة', 'ينبع', 'العلا'], prices: [{ value: 11200 }, { value: 7400 }] },
-  SAU846: { name: 'منطقة القصيم', short: 'القصيم', districts: ['بريدة', 'عنيزة', 'الرس'], prices: [{ value: 6800 }, { value: 9100 }] },
-  SAU847: { name: 'منطقة حائل', short: 'حائل', districts: ['حائل', 'بقعاء'], prices: [{ value: 5600 }] },
-  SAU848: { name: 'منطقة تبوك', short: 'تبوك', districts: ['تبوك', 'أملج', 'الوجه'], prices: [{ value: 7900 }, { value: 12500 }] },
-  SAU861: { name: 'منطقة الحدود الشمالية', short: 'الحدود الشمالية', districts: ['عرعر', 'رفحاء'], prices: [{ value: 4800 }] },
-  SAU862: { name: 'منطقة الجوف', short: 'الجوف', districts: ['سكاكا', 'دومة الجندل'], prices: [{ value: 5200 }] },
-  SAU885: { name: 'منطقة الباحة', short: 'الباحة', districts: ['الباحة', 'بلجرشي'], prices: [{ value: 4600 }] },
-  SAU886: { name: 'منطقة عسير', short: 'عسير', districts: ['أبها', 'خميس مشيط'], prices: [{ value: 8300 }, { value: 6900 }] },
-  SAU887: { name: 'منطقة جازان', short: 'جازان', districts: ['جازان', 'صبيا'], prices: [{ value: 5100 }] },
-  SAU1096: { name: 'منطقة نجران', short: 'نجران', districts: ['نجران', 'شرورة'], prices: [{ value: 4900 }] },
-}
-const defaultRegion = 'SAU1097'
-
 /* ---------- Back to top ---------- */
 const toTop = document.querySelector('#to-top')
 const onScroll = () => {
@@ -193,129 +146,6 @@ document.querySelector('#search-form')?.addEventListener('submit', (e) => {
   document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' })
 })
 
-/* ---------- Saudi regions map ---------- */
-// Home page only
-if (document.querySelector('#sa-map')) {
-  const VIEW_W = 1000
-  const VIEW_H = 825
-  const mapSvg = document.querySelector('#sa-map')
-  const mapOverlay = document.querySelector('#map-overlay')
-  const regionSelect = document.querySelector('#map-region')
-  const districtsEl = document.querySelector('#map-districts')
-  const riyal = '<svg class="h-[0.85em] w-auto" viewBox="0 0 20 22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 2v14.5l-4 1" /><path d="M12.5 4v15" /><path d="M2 10.5l16-3.5" /><path d="M2 14.5l16-3.5" /><path d="M14 20l4-1" /></svg>'
-  const priceFormat = new Intl.NumberFormat('en-US')
-  const pct = (x, y) => `left:${(x / VIEW_W) * 100}%;top:${(y / VIEW_H) * 100}%`
-
-  // Fallback badge positions (fractions of the region bounding box, from its centre)
-  const autoSpots = [
-    [-0.32, -0.22],
-    [0.06, -0.06],
-    [-0.3, 0.18],
-    [0.08, 0.3],
-  ]
-
-  regionSelect.innerHTML = Object.entries(mapData)
-    .map(([id, r]) => `<option value="${id}">${r.short}</option>`)
-    .join('')
-
-  const renderDistricts = (r) => {
-    const chip = (text) =>
-      `<button type="button" data-chip class="h-9 shrink-0 cursor-pointer whitespace-nowrap rounded-full border border-line bg-white px-4 text-xs text-dark transition hover:border-gold sm:text-[13px]">${text}</button>`
-    districtsEl.innerHTML = [...r.districts, `كل أحياء ${r.short}`].map(chip).join('')
-  }
-  districtsEl.addEventListener('click', (e) => {
-    const chip = e.target.closest('[data-chip]')
-    if (!chip) return
-    const on = !chip.classList.contains('is-on')
-    districtsEl.querySelectorAll('[data-chip]').forEach((c) => {
-      c.classList.remove('is-on', 'border-gold', 'bg-gold', 'text-white')
-      c.classList.add('bg-white', 'text-dark')
-    })
-    if (on) {
-      chip.classList.add('is-on', 'border-gold', 'bg-gold', 'text-white')
-      chip.classList.remove('bg-white', 'text-dark')
-    }
-  })
-
-  const renderOverlay = (id) => {
-    const r = mapData[id]
-    const box = document.getElementById(id).getBBox()
-    const cx = box.x + box.width / 2
-    const cy = box.y + box.height / 2
-    const label = r.label ?? { x: cx, y: cy }
-
-    const badges = (r.prices ?? [])
-      .map((p, i) => {
-        const [fx, fy] = autoSpots[i % autoSpots.length]
-        const x = p.x ?? cx + fx * box.width
-        const y = p.y ?? cy + fy * box.height
-        return `<span class="map-pop absolute inline-flex -translate-y-full items-center gap-1 whitespace-nowrap rounded-full rounded-bl-none bg-gold px-2 py-1 text-[10px] font-medium text-white shadow-sm sm:px-3.5 sm:py-1.5 sm:text-[15px]" dir="ltr" style="${pct(x, y)};animation-delay:${150 + i * 90}ms">${riyal}${priceFormat.format(p.value)}</span>`
-      })
-      .join('')
-
-    mapOverlay.innerHTML = `${badges}
-      <span class="map-pop absolute -translate-x-1/2 -translate-y-full" style="${pct(label.x, label.y)}">
-        <span class="relative mb-2 block whitespace-nowrap rounded-full bg-white px-3 py-1.5 text-[11px] font-medium text-dark shadow-[0_4px_16px_rgba(0,0,0,0.1)] sm:px-5 sm:py-2.5 sm:text-[15px]">${r.name}
-          <span class="absolute -bottom-1 left-1/2 size-2.5 -translate-x-1/2 rotate-45 bg-white"></span>
-        </span>
-      </span>`
-  }
-
-  const selectRegion = (id) => {
-    if (!mapData[id]) return
-    mapSvg.querySelectorAll('.region').forEach((p) => p.classList.toggle('is-active', p.id === id))
-    // Bring the active region to the front so its thick border is not covered by neighbours
-    mapSvg.appendChild(document.getElementById(id))
-    regionSelect.value = id
-    renderDistricts(mapData[id])
-    renderOverlay(id)
-  }
-
-  mapSvg.addEventListener('click', (e) => {
-    const path = e.target.closest('.region')
-    if (path) selectRegion(path.id)
-  })
-  regionSelect.addEventListener('change', () => selectRegion(regionSelect.value))
-  selectRegion(defaultRegion)
-}
-
-/* ---------- City Google map ---------- */
-// City pages (riyadh, jeddah): district chips move the embedded Google map.
-// The city and its districts come from data-city / data-districts on the iframe.
-if (document.querySelector('#city-map')) {
-  const cityMap = document.querySelector('#city-map')
-  const regionSelect = document.querySelector('#map-region')
-  const districtsEl = document.querySelector('#map-districts')
-  const city = cityMap.dataset.city
-  const districts = cityMap.dataset.districts.split('،')
-  const mapSrc = (q, zoom) =>
-    `https://www.google.com/maps?q=${encodeURIComponent(q)}&z=${zoom}&hl=ar&output=embed`
-
-  regionSelect.innerHTML = `<option>${city}</option>`
-
-  const chip = (text, district = '') =>
-    `<button type="button" data-chip data-district="${district}" class="h-9 shrink-0 cursor-pointer whitespace-nowrap rounded-full border border-line bg-white px-4 text-xs text-dark transition hover:border-gold sm:text-[13px]">${text}</button>`
-  districtsEl.innerHTML = [...districts.map((d) => chip(d, d)), chip(`كل أحياء ${city}`)].join('')
-
-  districtsEl.addEventListener('click', (e) => {
-    const target = e.target.closest('[data-chip]')
-    if (!target) return
-    districtsEl.querySelectorAll('[data-chip]').forEach((c) => {
-      const on = c === target
-      c.classList.toggle('is-on', on)
-      c.classList.toggle('border-gold', on)
-      c.classList.toggle('bg-gold', on)
-      c.classList.toggle('text-white', on)
-      c.classList.toggle('bg-white', !on)
-      c.classList.toggle('text-dark', !on)
-    })
-    const district = target.dataset.district
-    cityMap.src = district
-      ? mapSrc(`حي ${district}، ${city}، السعودية`, 14)
-      : mapSrc(`${city}، السعودية`, 11)
-  })
-}
-
 /* ---------- Image lightbox (property gallery) ---------- */
 const galleryLinks = [...document.querySelectorAll('[data-lightbox]')]
 if (galleryLinks.length) {
@@ -369,6 +199,33 @@ document.querySelector('#request-form')?.addEventListener('submit', (e) => {
   e.preventDefault()
   e.target.reset()
   e.target.querySelector('[data-form-success]').classList.remove('hidden')
+})
+
+/* ---------- Projects filter: two-thumb ranges (UI only) ---------- */
+document.querySelector('#projects-filter')?.addEventListener('submit', (e) => e.preventDefault())
+
+document.querySelectorAll('[data-range]').forEach((range) => {
+  const [lo, hi] = range.querySelectorAll('input[type="range"]')
+  const labels = range.nextElementSibling
+  const unit = range.dataset.unit
+  const format = (v) => `${Number(v).toLocaleString('en-US')} ${unit}`
+  const percent = (v) => ((v - lo.min) / (lo.max - lo.min)) * 100
+
+  const update = (e) => {
+    // Keep the thumbs from crossing each other
+    if (+lo.value > +hi.value) {
+      if (e?.target === lo) lo.value = hi.value
+      else hi.value = lo.value
+    }
+    range.style.setProperty('--from', `${percent(lo.value)}%`)
+    range.style.setProperty('--to', `${percent(hi.value)}%`)
+    labels.querySelector('[data-range-min]').textContent = format(lo.value)
+    labels.querySelector('[data-range-max]').textContent = format(hi.value)
+  }
+
+  lo.addEventListener('input', update)
+  hi.addEventListener('input', update)
+  update()
 })
 
 /* ---------- AI assistant chat (UI only) ---------- */
